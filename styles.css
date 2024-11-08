@@ -1,7 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
-    --colorLetras: rgb(58, 58, 213);
+    --colorLetras: rgb(77, 77, 230);
     --background: 43, 43, 43;
     --border: rgb(65, 65, 65);
     --titulo: rgb(252, 206, 97);
@@ -176,5 +176,8 @@ button:hover {
     }
     body {
         display: visible;
+    }
+    .title {
+        line-height: normal;
     }
 }
