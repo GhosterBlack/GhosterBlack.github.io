@@ -157,3 +157,21 @@ button:hover {
     border-bottom: none;
     border-top: none;
 }
+
+
+@media screen and (max-width: 500px) {
+    .later {
+        display: none;
+    }
+    main {
+        display: block;
+    }
+    section.doble {
+        display: block;
+    }
+
+    section img {
+        width: 100%;
+        height: auto;
+    }
+}
