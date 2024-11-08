@@ -8,6 +8,8 @@
     --later: rgb(33, 34, 36);
     --hover: rgb(50, 50, 50);
     --activeHover: rgb(80, 80, 80);
+    --colorSelect: rgb(87, 87, 239);
+    --subtema: rgb(39, 165, 98);
 }
 
 body {
@@ -101,6 +103,37 @@ section div {
 .later {
     background-color: var(--later);
     border-right: 1px solid var(--border);
+}
+
+/* Algun dia veran mi portafolio y diran este pana uso una plantilla, ojala al ver el codigo sepan que no fue asi */
+.game {
+    height: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: solid 1px black;
+    background-color: var(--colorLetras);
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+button:hover {
+    background-color: var(--colorSelect);
+    transition: all .3s;
+}
+
+.subtema {
+    color: var(--subtema);
+}
+
+.p-10 {
+    padding: 10px;
 }
 
 ::-webkit-scrollbar {
