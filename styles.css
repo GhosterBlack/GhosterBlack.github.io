@@ -10,6 +10,7 @@
     --activeHover: rgb(80, 80, 80);
     --colorSelect: rgb(87, 87, 239);
     --subtema: rgb(39, 165, 98);
+    --text: rgb(191, 109, 54);
 }
 
 body {
@@ -134,6 +135,10 @@ button:hover {
 
 .p-10 {
     padding: 10px;
+}
+
+.text {
+    color: var(--text);
 }
 
 ::-webkit-scrollbar {
