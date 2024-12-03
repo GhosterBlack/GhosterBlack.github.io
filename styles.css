@@ -32,6 +32,15 @@ header {
     color: var(--colorLetras);
 }
 
+.grande {
+    font-size: 25px;
+}
+
+.key {
+    color: var(--colorLetras);
+    font-weight: bolder;
+}
+
 main {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -132,6 +141,8 @@ button:hover {
 .subtema {
     color: var(--subtema);
 }
+
+
 
 .p-10 {
     padding: 10px;
