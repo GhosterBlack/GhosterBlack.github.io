@@ -100,7 +100,22 @@ body {
     border-radius: 10px;
 }
 
-.play:hover {
+
+.notPlay {
+    background-color: var(--pastel-purple);
+    color: var(--white-color);
+    padding: 20px;
+    text-shadow: 1px 1px 5px var(--black-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+    animation: aparecer 1s 1 forwards;
+    animation-delay: 2s;
+    filter: opacity(0);
+    margin-top: 30px;
+}
+
+.play:hover, .notPlay:hover {
     background-color: var(--text-pastel-purple);
     transition: all 0.5s;
 }
@@ -131,6 +146,35 @@ body {
     height: 100vh;
 }
 
+.corazones {
+    width: 100px;
+    height: 100px;
+    background-color: var(--pastel-pink);
+    transform: rotate(-45deg);
+    margin: 50px auto;
+    animation: subirAbajo 2s 1 forwards;
+}
+
+.corazones::before,
+.corazones::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--pastel-pink);
+    position: absolute;
+}
+
+.corazones::before {
+    top: -50px;
+    left: 0;
+}
+
+.corazones::after {
+    left: 50px;
+    top: 0;
+}
+
 @keyframes bajar {
     from {
         transform: translateY(-50vh);
@@ -152,6 +196,15 @@ body {
     100% {
         transform: translateY(-100vh);
         display: none;
+    }
+}
+
+@keyframes subirAbajo {
+    0% {
+        top: 100vh
+    }
+    100% {
+        top: -100vh
     }
 }
 

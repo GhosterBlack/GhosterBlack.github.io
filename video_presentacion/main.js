@@ -3,11 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let time = 0;
     let timing = 0;
     let pause = false;
-    const final = 26;
+    const final = 31;
     const con = document.getElementsByClassName("con");
     const nexts = document.getElementsByClassName("next");
     const finalDiv = document.getElementById("final");
-    const audio = document.querySelector("audio")
+    const audio = document.querySelector("audio");
+    let isFinal = false;
 
     /**
      * @typedef Especial
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 x: "0vw",
                 y: "10vh",
                 clases: ["aparecer"],
-                time: 10,
+                time: 8,
                 size: 30,
                 width: "300px"
             }
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 
                 type: "control",
-                time: 2,
+                time: 1,
             }
         ],
 
@@ -84,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 
                 type: "control",
-                time: 2,
+                time: 1,
             }
         ],
 
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 
                 type: "control",
-                time: 2,
+                time: 1,
             }
         ],
 
@@ -102,9 +103,140 @@ document.addEventListener('DOMContentLoaded', function() {
                 x: "0vw",
                 y: "10vh",
                 clases: ["relleno"],
-                time: 10,
+                time: 9,
                 size: 30,
                 width: "300px"
+            }
+        ],
+
+        13: [
+            {
+                text: "",
+                x: "0vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+                
+            },
+            {
+                text: "",
+                x: "10vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+                
+            },
+            {
+                text: "",
+                x: "25vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+                
+            },
+            {
+                text: "",
+                x: "30vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+               
+            },
+            {
+                text: "",
+                x: "60vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+                
+            },
+            {
+                text: "",
+                x: "45vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+                
+            },
+            {
+                text: "",
+                x: "75vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+                
+            },
+            {
+                text: "",
+                x: "95vw",
+                y: "100vh",
+                clases: ["corazones"],
+                time: 6,
+                size: 10,
+                
+            },
+        ],
+
+        25: [
+            {
+                text: "Jehova siempre tendra en cuenta todo lo que hacen por El",
+                x: "0",
+                y: "0vh",
+                clases: ["relleno"],
+                time: 8,
+                size: 30,
+                width: "100vw"
+            }
+        ],
+        26: [
+            {
+                text: "Y sabemos que...",
+                x: "0",
+                y: "90vh",
+                clases: ["relleno"],
+                time: 4,
+                size: 30,
+                width: "100vw"
+            }
+        ],
+        27: [
+            {
+                text: "Aun cuando se van",
+                x: "0",
+                y: "0vh",
+                clases: ["relleno"],
+                time: 4,
+                size: 30,
+                width: "100vw"
+            }
+        ],
+        28: [
+            {
+                text: "Jehova siempre recuerda a sus amigos",
+                x: "0",
+                y: "0vh",
+                clases: ["relleno"],
+                time: 6,
+                size: 30,
+                width: "100vw"
+            }
+        ],
+        30: [
+            {
+                text: "Y nosotros las estaremos esperando",
+                x: "0",
+                y: "0vh",
+                clases: ["relleno"],
+                time: 4,
+                size: 30,
+                width: "100vw"
             }
         ]
     }
@@ -114,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const img = document.createElement("img");
         img.src = "imgs/"+(i+1)+".jpg";
         element.classList.add("con", "foto", "subir", "entrada-subir");
-        element.setAttribute("timing", "5");
+        element.setAttribute("timing", "4");
         element.appendChild(img);
         if (especiales[i]) {
             const especial = especiales[i];
@@ -129,10 +261,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     div.style.left = texto.x;
                     div.style.top = texto.y;
                     div.style.fontSize = (texto.size || 20) + "px" ;
-                    div.style.width = texto.width ? texto.width : "auto";
+                    div.style.width = texto.width ? texto.width : "";
+                    if (texto.clases.includes("corazones") || texto.clases.includes("aleatorio")) {
+                        div.style.animationDelay = ((getRandomNumber(1, 100)) / 100) + "s"
+                    }
                     element.appendChild(div);
                 }
-
+                
                 
                 if (texto.time > tim && (texto.type == "control" || !control)) {
                     tim = texto.time
@@ -163,6 +298,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
     function actualizarContainer() {
         for (let i = 0; i < con.length; i++) {
             const element = con[i];
@@ -180,6 +318,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (timing > 0) {
                     time = 0;
                 }
+                if (element == finalDiv) {
+                    isFinal = true;
+                }
             }
         }
     }
@@ -196,7 +337,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
 
     function cambiarEscena() {
-        indexVideo++;
+        if (isFinal) {
+            indexVideo = 0;
+        } else {
+            indexVideo++;
+        }
         actualizarContainer();
     }
 });
