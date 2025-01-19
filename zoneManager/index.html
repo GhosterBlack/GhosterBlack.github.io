@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zone Manager</title>
+<link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Zone manager</h1>
+    </header>
+    <main>
+        <button id="reset">
+            Resetear
+        </button>
+        <div class="hidden" id="solicitud">
+            <h2>
+                Ajustando el dia <span id="solicitud_nombre_dia"></span>
+            </h2>
+            <div id="solicitud_ajustes">
+                <h3>
+                    Ingrese el promedio de parejas de este dia
+                </h3>
+                <input type="text" id="numPromedio">
+                <h3>
+                    Ingrese la cantidad de zonas que se asignan a este dia
+                </h3>
+                <input type="text" id="numZonas">
+                <br>
+
+                <button id="aceptar_solicitud_ajustes">Aceptar</button>
+                
+            </div>
+            <div class="hidden" id="solicitud_dia">
+                <h3>
+                    Digite el numero de la zona <span id="solicitud_num_zona">1</span>
+                </h3>
+                <input type="text" id="numZona">
+                <h3>
+                    Digite el Lapzo
+                </h3>
+                <input type="text" id="numLapzo">
+                <br>
+                <div>
+                    <input type="checkbox" id="check_manana"> Mañana
+                </div>
+                <div>
+                    <input type="checkbox" id="check_tarde"> Tarde
+                </div>
+                <button id="aceptar_solicitud_dia">Aceptar</button>
+            </div>
+        </div>
+
+        <div id="tarea">
+            <div id="tarea_mes_inicia">
+                <h3>Digite el mes desde el que comienza</h3>
+                <input type="text" id="tarea_mes">
+                <button id="tarea_aceptar">Aceptar</button>
+            </div>
+            <div id="resultado"></div>
+        </div>
+    </main>
+</body>
+<script src="main.js"></script>
+</html>

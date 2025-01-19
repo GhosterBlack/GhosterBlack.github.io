@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --yellow-paster-color: #fdfd96;
+    --white-color: #e3e3e3;
+    --black-color: #1d1d1d;
+    --pastel-pink: #ffd1dc;
+    --pastel-blue: #aec6cf;
+    --pastel-green: #77dd77;
+    --pastel-purple: #cbaacb;
+    --pastel-orange: #ffb347;
+    --pastel-yellow: #fdfd96;
+    --text-pastel-pink: #ff69b4;
+    --text-pastel-blue: #5f9ea0;
+    --text-pastel-green: #32cd32;
+    --text-pastel-purple: #9370db;
+    --text-pastel-orange: #ffa500;
+    --text-pastel-yellow: #ffd700;
+    font-family: "Courgette", serif;
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--yellow-paster-color);
+    color: var(--text-pastel-purple);
+}
+
+.con {
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.textoLindo {
+    font-size: 30px;
+    width: 90vw;
+    font-weight: bolder;
+    text-shadow: 1px 1px 3px var(--pastel-green);
+}
+
+.titulo-semicircular {
+    font-size: 2.5rem;
+    background-color: var(--pastel-purple);
+    color: var(--text-pastel-purple);
+    padding: 10px;
+    border-radius: 0 0 50% 50%;
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0 -50vh 0 50vh var(--pastel-purple);
+    animation: bajar 2s 1 forwards;
+}
+
+
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.padding-50 {
+    padding: 50px;
+}
+
+.play {
+    transform: translateY(50vh);
+    background-color: var(--pastel-purple);
+    color: var(--white-color);
+    padding: 20px;
+    text-shadow: 1px 1px 5px var(--black-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+    animation: aparecer 1s 1 forwards;
+    animation-delay: 2s;
+    filter: opacity(0);
+
+}
+
+.aparecer {
+    animation: aparecer 1s 1 forwards;
+
+}
+
+.text {
+    width: fit-content;
+    position: absolute;
+}
+
+.relleno {
+    background-color: var(--pastel-pink);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.play:hover {
+    background-color: var(--text-pastel-purple);
+    transition: all 0.5s;
+}
+
+
+.inactive {
+    display: none;
+}
+
+.active {
+    display: auto;
+}
+
+.subir.animate.inactive {
+    animation: subirTodo 1s 1 forwards;
+    display: block;
+}
+
+.subir.animate.inactive.flex-center {
+    display: flex;
+}
+
+.entrada-subir.active {
+    animation: subir 1s 1;
+}
+
+.con img {
+    height: 100vh;
+}
+
+@keyframes bajar {
+    from {
+        transform: translateY(-50vh);
+    }
+    to {
+        transform: translateY(40vh);
+    }
+}
+
+@keyframes subirTodo {
+    0% {
+        transform: translateY(0vh);
+        display: auto;
+    }
+    90% {
+        transform: translateY(-100vh);
+        display: auto;
+    }
+    100% {
+        transform: translateY(-100vh);
+        display: none;
+    }
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0vh);
+        display: auto;
+    }
+    100% {
+        transform: translateY(-100vh);
+        display: auto;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        filter: opacity(0);
+    }
+    to {
+        filter: opacity(1);
+    }
+}
