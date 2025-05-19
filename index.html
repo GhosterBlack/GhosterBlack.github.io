@@ -1,181 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivan Andres Torres Gimenez</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torres dev</title>
+<link rel="stylesheet" href="styles.css"> 
 </head>
-
 <body>
-    <header>
-        <div class="header"></div>
-        <div class="title">
-            <h1>Ivan Andres Torres Gimenez</h1>
+<div class="menu">
+    <img src="resourses/images/logoCut.png" alt="">
+    <br>
+    <div class="openOptionsPhone boton" id="openOptions">
+        Menu
+    </div>
+    <div class="options" id="options">
+        <a href="#sobreMi">
+            <div class="boton">
+                Sobre mi
+            </div>
+        </a>
+        <a href="#proyectos">
+            <div class="boton">
+                Proyectos
+            </div>
+    
+        </a>
+    </div>
+</div>
+<main>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Contacto</h2>
+            <p>Puedes contactarme al correo: ivan.look3002@gmail.com</p>
+            <p>O al número: +57 312 200 3538</p>
         </div>
-    </header>
-    <main>
-        <div class="later">
-            <br>
-            <div class="item active" to="home">
-                Principal
-            </div>
-            <div class="item" to="pages">
-                Mis Paginas
-            </div>
-            <div class="item" to="apps">
-                Mis aplicaciones
-            </div>
-           <!--  <div class="item" to="games">
-                Mis juegos
-            </div> -->
-            <div class="item" to="contact">
-                Datos de contacto
-            </div>
+    </div>
+    <div class="container">
+        <h1 class="titulo">
+            Hola, soy Torres dev
+        </h1>
+        <p>
+            Desarrollador web y programador de videojuegos.
+        </p>
+        <br>
+        <div class="boton" id="contactButton">
+            Contactame
         </div>
-
-        <div class="scroll" id="scroll">
-            <section class="doble" id="home">
-               <div>
-                <img src="resourses/images/perfil.jpg" alt="">
-               </div>
-               <div>
-                <h2 class="titulo">
-                    Bienvenido a mi portafolio
+    </div>
+    <a name="sobreMi"></a>
+    <div class="container espaciado">
+        <h1>
+            Sobre mi
+        </h1>
+        <br>
+        <p>
+            Mi nombre es Ivan Torres, tengo 22 años y soy programador web y de videojuegos.
+            Vivo en Bogota, Colombia, aprendi a programar hace ya 7 años, y desde entonces me 
+            a parecido una forma especial de expresar mi creatividad, al principio empece desarrollando
+            paginas web, practicando HTML y CSS, luego aprendi a programar en Javascript. Esto antes de empezar
+            como tal mi carrera academica, actualmente, luego de haber cursado mi tecnologia en analisis y desarrollo
+            de software, me desempeño perfectamente como un desarrollador web full-stack, sin embargo
+            tambien me apasiona la programacion nativa, el desarrollo de aplicaciones android y de escritorio.
+            <br> <br>
+            Sobre el desarrollo de videojuegos, tengo un proyecto en proceso y otros en mente, cuento con 
+            un pequeño grupo de programadores para completar estos proyectos que pronto veran la luz. 
+        </p>
+    </div>
+    <a name="proyectos"></a>
+    <div class="container espaciado">
+        <h1>
+            Proyectos
+        </h1>
+        <br>
+        <p>
+            He desarrollado varios proyectos web, me gustaria destacar dos de los mas interesantes:
+        </p>
+        <section>
+            <div>
+                <img src="resourses/images/flexBuddyPro.png" alt="">
+            </div>
+            <div>
+                <h2>
+                    FlexBuddyPro
                 </h2>
                 <br>
                 <p>
-                    Dejame contarte un poco sobre mi, soy un desarrollador web apasionado por la programacion y la logica.
-                    Siempre he pensado que la mejor forma de aprender cualquier tecnologia es traves de la logica y el entendimiento.
+                    FlexBuddyPro es una aplicacion web que contiene un bot virtual que 
+                    automatiza la toma de bloques de entrega de Amazon Flex, este bot esta disponible 
+                    en Estados Unidos, sin embargo la pagina puede ser visitada desde cualquier parte del mundo.
                     <br> <br>
-                    Empece a programar a la edad de 13 años, jugueteando en archivos html y css, hoy en dia los lenguajes que mas 
-                    domino son los orientados a desarrollo web, sin embargo he programado algunas aplicaciones de escritorio 
-                    y nativas para android.
-                    <br> <br>
-                    En esta pagina encontraras algunos de mis proyectos.
+                    <a href="https://flexbuddypro.com/#/">Enlace para visitar</a>
                 </p>
-               </div>
-            </section>
-            <section style="display: none;">
-                <h2 class="titulo">
-                    ¿Tuviste un mal dia? ¡Juega un juego!
+            </div>
+        </section>
+
+        <br>
+
+        <section>
+            <div>
+                <img src="resourses/images/juanidemo.png" alt="">
+            </div>
+            <div>
+                <h2>
+                    Juanidemo
                 </h2>
                 <br>
-                <div class="game" id="game">
-                    <button id="btnGame">
-                        Jugar
-                    </button>
-                </div>
-            </section>
+                <p>
+                    Juanidemo es una aplicacion hecha con HTML, CSS, Javascript y PHP, que se ejecuta en LAN,
+                    la escuela en la que estudie me contrato para desarrollar una aplicacion que 
+                    hacer votaciones de personero de forma digital y transparente, la aplicacion puede ser solicitada y 
+                    personalizada para cada institucion educativa.
+                </p>
+            </div>
+        </section>
 
-            <br>
+        <br>
+        <br>
+        <p>
+            Como he mencionado anteriormente, estoy desarrollando un videojuego:
+        </p>
+        <br>
+        <section>
+            <div>
+                <img src="resourses/images/death_nine.png" alt="">
+            </div>
+            <div>
+                <h2>
+                    Death Nine
+                </h2>
+                <br>
+                <p>
+                    Death Nine es mi proyecto de videojuego en proceso, es un juego de plataformas en 2D,
+                    hecho principalmente para celulares. El personaje se mueve por si mismo, y el jugador
+                    debera deslizar los dedos por la pantalla para saltar, deslizarse o usar diferentes habilidades para
+                    esquivar, atacar o defenderse de enemigos. Sera un runner por niveles en el que protagonizara un gato
+                    antropomorfico que busca rescatar a su esposa.
+                    <br> <br>
+                </p>
 
-            <h2 class="subtema p-10" id="pages">
-                Te presento algunas de las paginas web que he hecho
-            </h2>
-
-            <section class="doble">
-                <div>
-                    <img src="resourses/images/flexBuddyPro.png" alt="">
-                </div>
-                <div>
-                    <h3 class="titulo">
-                        FlexBuddyPro
-                    </h3>
-                    <p>
-                        Me encargue del front-end de esta pagina, tambien me encargue de las llamadas a la api
-                        de la aplicacion web. Esta presta un servicio de automatizacion para pedidos amazon, disponible
-                        solo para Estados Unidos.
-                        <br> <br>
-                        El proceso de creacion me ayudo a mejorar mis habilidades de trabajo en equipo coordinado con el 
-                        encargado del back-end de la pagina, tambien a agudizar mis habilidades para manejar <span class="text">git</span> 
-                        y <span class="text">github</span>,
-                        aprender a hallar mejores soluciones a casos especificos y a innovar en las interfaces de usuarios
-                        accesibles y faciles de comprender. 
-                        <br> <br>
-                        Para desarrollarla utilice el framework <span class="text">angular</span>
-                         y programe en <span class="text">typescript</span>
-                        <br> <br>
-                        <a class="text" href="https://flexbuddypro.com/#/">Enlace para ver</a>
-                    </p>
-                </div>
-            </section>
-
-            <h2 class="subtema p-10" id="apps">
-                Aqui veras algunas de las Aplicaciones que he hecho
-            </h2>
-            <section class="doble">
-                <div>
-                    <img src="resourses/images/juanidemo.png" alt="">
-                </div>
-                <div>
-                    <h3 class="titulo">
-                        Juanidemo
-                    </h3>
-                    <p>
-                        Juanidemo es una aplicacion offline, que se usa en el navegador mediante un servidor lan como xampp.
-                        Puede ser usada por las instituciones educativas como medio para realizar las votaciones de personero 
-                        estudiantil o cualquier otro tipo de votaciones estudiantiles.
-                        <br> <br>
-                        La aplicacion me fue solicitada por un grupo de estudiantes que deseaban agilizar los procesos 
-                        de votacion en su institucion. El servidor fue desarrollado con <span class="text">php</span> y realiza el menor
-                        numero de desplazamientos url para evitar la carga de datos innesesaria.
-                        Las interfaces y demas sistemas fueron programados con 
-                        <span class="text">html</span>, 
-                        <spna class="text">css</spna> y 
-                        <span class="text">javascript</span>, todo vanilla. La base de datos fue diseñada en 
-                        <span class="text">PostGreSQL</span>
-                    </p>
-                </div>
-            </section>
-           
-            <section class="doble">
-                <div>
-                    <img src="resourses/images/nathBook.jpg" alt="">
-                </div>
-                <div>
-
-                    <h3 class="titulo">
-                        NathBook
-                    </h3>
-                    <p>
-                        NathBook es una aplicacion de notas para android desarrollada en el framework de <span class="text">cordova</span>, 
-                        puede descargarse
-                        desde la play store y esta en proceso de desarrollo, mediante esta aplicacion aprendi a gestionar la publicacion
-                        de una aplicacion en la play store y el proceso debido para poder aplicarle publicidad.
-                        <br> <br>
-                        Permite la edicion del texto, el agregado de notas y la organizacion mediante notas que pueden alvergar texto,
-                        imagenes, audio y enlace a otras notas, en proceso de desarrollo esta la exportacion de notas tanto en formato 
-                        de texto como en otros formatos.
-                        <br> <br>
-                        Este es un proyecto al que le tengo especial cariño y deseo sacarlo adelante.
-                    </p>
-                </div>
-            </section>
-
-            <h2 class="subtema p-10" id="contact">
-                Mis datos de contacto
-            </h2>
-
-            <section class="grande">
-                <span class="key">Correo electronico: </span> 
-                <a href="mailto:ivan.look3002@gmail.com" class="text">ivan.look3002@gmail.com</a>
-                <br> <br>
-                <span class="key">Numero telefonico: </span>
-                <span class="text">+57 312 2003538</span>
-                <br> <br>
-
-                <span class="key">Cuenta de LinkedIn: </span>
-                <a href="https://www.linkedin.com/in/iv%C3%A1n-torres-gimenez-6670a9264" class="text">
-                    Iván Torres Gimenez
-                </a>
-            </section>
-
-            <br> <br> <br>
+            </div>
+        </section>
+        <br>
+        <br>
+        <p>
+            Tambien he hecho algunas invitaciones virtuales para eventos tales como bodas y graduaciones:
+        </p>
+        <br>
+        <br>
+        <div class="galery">
+            <img src="resourses/images/gradoNath.jpg" alt="">
+            <img src="resourses/images/bodaYuli.jpg" alt="">
         </div>
-    </main>
+    </div>
+    
+    
+</main>
+<footer>
+    Torres dev &copy; 2025
+    <br>
+    +57 312 200 3538
+    <br>
+    ivan.look3002@gmail.com
+</footer>
+
 </body>
 <script src="scripts.js"></script>
-
 </html>
