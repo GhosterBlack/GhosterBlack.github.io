@@ -1,0 +1,42 @@
+window.addEventListener("load", ()=> {
+    const galery = document.getElementById("galery");
+    const plantillas = [
+        {
+            name: "Super rosa",
+            text: "¡Te invito!",
+            url: "superRosa/index.html",
+            colors: ["#e65fcd", "#C70039", "#900C3F"],
+            font: "Arial",
+            fontColor: "#FFFFFF"
+        }
+    ]
+
+    for (let i = 0; i < plantillas.length; i++) {
+        const plantilla = plantillas[i];
+        const celda = document.createElement("div");
+        const nodePlantilla = document.createElement("div");
+        const textNode = document.createElement("p");
+
+        celda.classList.add("celda");
+        nodePlantilla.classList.add("plantilla");
+        for (let j = 0; j < plantilla.colors.length; j++) {
+            const color = plantilla.colors[j];
+            nodePlantilla.style.setProperty("--color" + (j+1), color);
+        }
+        nodePlantilla.style.setProperty("fontColor", plantilla.fontColor);
+        nodePlantilla.style.setProperty("font", plantilla.font);
+        nodePlantilla.innerHTML = `
+            <div class="text">
+                <p>${plantilla.text}</p>
+            </div>
+        `;
+        textNode.innerHTML = plantilla.name;
+
+        nodePlantilla.addEventListener("click", () => {
+            window.location.href = plantilla.url;
+        });
+        galery.appendChild(celda);
+        celda.appendChild(nodePlantilla);
+        celda.appendChild(textNode);
+    }
+})
