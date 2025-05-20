@@ -64,15 +64,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     confirmar.onclick = ()=> {
 
-        let mensaje = "Hola, Natalia. "+nombre+"";
-        if (nombre.includes("y")) {
-            mensaje += ", confirman asistencia. Gracias por la invitacion 💗"
-        } else {
-            mensaje += ", confirmo asistencia. Gracias por la invitacion 💗"
-        }
-        let enlace = "https://wa.me/573209927694/?text="+mensaje;
-        a.href = enlace;
-        a.click();
+        alert("Este boton enviara un mensaje al whatsapp de la persona que organiza la fiesta")
 
     }
 

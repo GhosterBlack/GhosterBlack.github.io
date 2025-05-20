@@ -182,7 +182,7 @@ a {
 iframe {
     width: 80vw;
     height: 80vh;
-    
+
 }
 
 .galery .plantilla .text p {
@@ -274,6 +274,7 @@ iframe {
     .openOptionsPhone {
         display: block;
     }
+    
     .options {
         height: 0px;
         overflow: hidden;
@@ -354,6 +355,7 @@ iframe {
     }
 
     .galery {
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
         padding: 8px 0;
     }

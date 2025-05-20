@@ -5,9 +5,9 @@ window.addEventListener("load", ()=> {
             name: "Super rosa",
             text: "¡Te invito!",
             url: "superRosa/index.html",
-            colors: ["#e65fcd", "#C70039", "#900C3F"],
-            font: "Arial",
-            fontColor: "#FFFFFF"
+            colors: ["#FFD1DC", "#FFB3BA", "#FF8B94"],
+            font: '"Courgette", serif',
+            fontColor: "#333333"
         }
     ]
 
@@ -37,8 +37,8 @@ window.addEventListener("load", ()=> {
             const color = plantilla.colors[j];
             nodePlantilla.style.setProperty("--color" + (j+1), color);
         }
-        nodePlantilla.style.setProperty("fontColor", plantilla.fontColor);
-        nodePlantilla.style.setProperty("font", plantilla.font);
+        nodePlantilla.style.setProperty("--fontColor", plantilla.fontColor);
+        nodePlantilla.style.setProperty("--font", plantilla.font);
         nodePlantilla.innerHTML = `
             <div class="text">
                 <p>${plantilla.text}</p>
