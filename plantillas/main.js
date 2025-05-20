@@ -11,6 +11,20 @@ window.addEventListener("load", ()=> {
         }
     ]
 
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("closeModal");
+    const openOptions = document.getElementById("openOptions");
+    const options = document.getElementById("options");
+    const frame = document.getElementById("frame");
+
+    openOptions.onclick = ()=> {
+        options.classList.toggle("active");
+    }
+
+    closeModal.addEventListener("click", () => {
+        modal.classList.remove("active");
+    });
+
     for (let i = 0; i < plantillas.length; i++) {
         const plantilla = plantillas[i];
         const celda = document.createElement("div");
@@ -33,7 +47,8 @@ window.addEventListener("load", ()=> {
         textNode.innerHTML = plantilla.name;
 
         nodePlantilla.addEventListener("click", () => {
-            window.location.href = plantilla.url;
+            frame.src = plantilla.url;
+            modal.classList.add("active");
         });
         galery.appendChild(celda);
         celda.appendChild(nodePlantilla);

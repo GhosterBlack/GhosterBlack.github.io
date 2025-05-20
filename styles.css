@@ -170,12 +170,18 @@ a {
 
 .galery .celda p {
     color: rgb(56, 84, 222);
-    
+    margin-top: 20px;
 }
 
 .galery .plantilla .text {
     position: absolute;
-    z-index: 1000;
+    z-index: 100;
+    
+}
+
+iframe {
+    width: 80vw;
+    height: 80vh;
     
 }
 

@@ -1,0 +1,282 @@
+:root {
+    --pastel-light-pink: #FFD1DC;
+    --pastel-medium-pink: #FFB3BA;
+    --pastel-dark-pink: #FF8B94;
+    --pastel-peach: #FFC3A0;
+    --pastel-lavender: #E6A9EC;
+    --dark-gray: #333333;
+    --medium-gray: #555555;
+}
+
+* {
+    font-family: "Courgette", serif;
+    margin: 0;
+}
+
+body {
+    background-color: var(--pastel-light-pink);
+    /* Fondo pastel claro */
+    color: var(--medium-gray);
+    /* Color oscuro para el texto */
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100vh;
+    background-image: url("img/detalle1.png"), url("img/enredadera.png"), url("img/enredadera.png");
+    background-repeat: no-repeat, repeat-y, repeat-y;
+    background-position-x: center, left, right;
+    padding-top: 30vh;
+    padding-bottom: 20vh;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.absolute {
+    position: absolute;
+    font-size: 15px;
+    left: 750px;
+}
+
+.absolute p {
+    transform: rotate(90deg);
+}
+
+p {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.hora-lugar .icono {
+    background-image: url("img/ubicacion.png");
+
+}
+
+.hora-lugar * {
+    margin-top: 20px;
+}
+
+.no-ninos .icono {
+    background-image: url("img/niñoZzz.png");
+}
+
+.especial {
+    color: var(--pastel-dark-pink);
+    /* Color oscuro para el texto especial */
+}
+
+.container {
+    background-color: var(--pastel-medium-pink);
+    padding: 20px;
+}
+
+.container p {
+    width: auto;
+}
+
+.reproductor {
+    margin: 50px auto;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.play {
+    width: 50px;
+    height: 50px;
+    background-image: url("img/play.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 20px;
+}
+
+.pause {
+    width: 50px;
+    height: 50px;
+    background-image: url("img/pausa.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 20px;
+
+}
+
+.next {
+    width: 40px;
+    height: 40px;
+    background-image: url("img/next.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 20px;
+}
+
+.previus {
+    width: 40px;
+    height: 40px;
+    background-image: url("img/next.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: rotate(180deg);
+}
+
+.flor {
+    width: 100%;
+    height: 55px;
+    background-image: url("img/flores.png");
+    background-size: 100px;
+}
+
+.tiempo {
+    text-align: center;
+}
+
+.tiempo div {
+    font-size: 30px;
+}
+
+.espera {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.fecha {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    text-align: center;
+}
+
+.fecha .decorate {
+    font-size: 18px;
+    border-top: 5px solid var(--pastel-dark-pink);
+    border-bottom: 5px solid var(--pastel-dark-pink);
+    padding: 10px;
+}
+
+.fecha .numero {
+    font-size: 29px;
+    padding: 10px;
+}
+
+.animate {
+    transform: translateY(20px);
+    filter: opacity(0);
+    transition: all .3s;
+}
+
+.animate.active {
+    transform: translateY(0px);
+    filter: opacity(1);
+    transition: all .3s;
+}
+
+.codigo-vestimenta .icono {
+    background-image: url("img/formal.png"); 
+    margin-bottom: 20px;
+}
+
+.tipo-regalo .icono {
+    background-image: url("img/sobre.png");
+}
+
+.asistencia .icono {
+    background-image: url("img/calendario.png");
+}
+
+.icono {
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 10px auto;
+}
+
+.carrusel {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carrusel-inner {
+    display: flex;
+    width: 100%;
+    animation: slide 20s infinite;
+}
+
+.carrusel-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+    background-color: var(--pastel-dark-pink);
+}
+.carrusel-item img {
+    width: 100%;
+}
+
+.flecha-espiral {
+    background-image: url("img/flecha.png");
+    width: 60px;
+    height: 60px;
+    margin-top: 90px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--pastel-peach);
+    color: var(--dark-gray);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--pastel-dark-pink);
+    transform: scale(1.05);
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(0); }
+    12.5% { transform: translateX(-100%); }
+    22.5% { transform: translateX(-100%); }
+    25% { transform: translateX(-200%); }
+    35% { transform: translateX(-200%); }
+    37.5% { transform: translateX(-300%); }
+    47.5% { transform: translateX(-300%); }
+    50% { transform: translateX(-400%); }
+    60% { transform: translateX(-400%); }
+    62.5% { transform: translateX(-500%); }
+    72.5% { transform: translateX(-500%); }
+    75% { transform: translateX(-600%); }
+    85% { transform: translateX(-600%); }
+    87.5% { transform: translateX(-700%); }
+    97.5% { transform: translateX(-700%); }
+    100% { transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: 100%, 20%, 20%;
+        padding-top: 15vh;
+        
+    }
+    .carrusel {
+        width: 100%;
+    }
+    p {
+        width: 250px;
+    }
+
+    .absolute {
+        top: 55vh;
+        left: 50vw;
+        
+    }
+
+    
+
+}
