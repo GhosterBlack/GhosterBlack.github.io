@@ -8,6 +8,14 @@ window.addEventListener("load", ()=> {
             colors: ["#FFD1DC", "#FFB3BA", "#FF8B94"],
             font: '"Courgette", serif',
             fontColor: "#333333"
+        },
+        {
+            name: "Azul y dorado",
+            text: "Estas invitado",
+            url: "blueAndGold/index.html",
+            colors: ["#2b3743", "#c8a85a", "transparent"],
+            font: "Arial",
+            fontColor: "#f2f2f2"
         }
     ]
 

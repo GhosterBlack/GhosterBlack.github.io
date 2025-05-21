@@ -1,0 +1,71 @@
+body {
+    --color-principal: #2b3743;
+    --color-secundario: #c8a85a;
+    --color-texto: #f2f2f2;
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("resourses/imgs/decorate.png"), url("resourses/imgs/decorate.png");
+    background-repeat: repeat-y, repeat-y;
+    background-position: left, right;
+    text-align: center;
+}
+
+.title {
+    border-bottom: var(--color-secundario) solid 2px;
+}
+hr {
+    color: var(--color-secundario);
+    border: solid 1px var(--color-secundario);
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0.5em 0;
+    color: var(--color-secundario);
+    text-shadow: 1px 1px 1px var(--color-texto);
+}
+
+.texto {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 1.5em auto;
+    max-width: 600px;
+    color: var(--color-texto);
+    background: rgba(43, 55, 67, 0.7);
+    padding: 1em 2em;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    transform: translateY(20px);
+    filter: opacity(0);
+    transition: all .3s;
+}
+
+button {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6em 1.4em;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+button:hover,
+button:focus {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.texto.active {
+    transform: translateY(0px);
+    filter: opacity(1);
+    transition: all .3s;
+}
