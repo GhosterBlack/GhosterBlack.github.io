@@ -35,6 +35,20 @@ p {
     margin-top: 100px;
 }
 
+header {
+    background-color: rgb(78, 78, 78);
+    color: white;
+    padding: 20px;
+    font-size: 1.2em;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid #444;
+    margin-left: 20vw;
+    width: calc(80vw - 59px);
+    position: fixed;
+    top: 0;
+
+}
+
 .boton {
     display: inline-block;
     background-color: #1e1e1e;
@@ -91,7 +105,7 @@ p {
 }
 
 main {
-    top: 0;
+    margin-top: 100px;
     margin-left: 20vw;
     width: 70vw;
     min-height: 100vh;
@@ -113,7 +127,7 @@ footer {
     letter-spacing: 0.04em;
     border-top: 1px solid #444;
     margin-left: 20vw;
-    width: 80vw;
+    width: calc(80vw - 51px);
 }
 
 section {
@@ -270,9 +284,32 @@ iframe {
     display: none;
 }
 
+.right {
+    float: right;
+    cursor: pointer;
+    color: white;
+}
+
+.right a {
+    color: #0ff;
+}
+
+.menu-icon {
+    float: right;
+}
+
 @media (max-width: 800px) {
     .openOptionsPhone {
         display: block;
+    }
+    header {
+        top: calc(100vh - 50px);
+        width: 100vw;
+        margin-left: 0;
+        font-size: 10px;
+    }
+    footer {
+        margin-bottom: 50px;
     }
     
     .options {

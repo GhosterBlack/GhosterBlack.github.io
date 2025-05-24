@@ -4,7 +4,7 @@ window.addEventListener("load", ()=> {
     const closeModal = document.getElementById("closeModal");
     const openOptions = document.getElementById("openOptions");
     const options = document.getElementById("options");
-
+    const loginSection = document.getElementById("loginSection");
 
     openOptions.onclick = ()=> {
         options.classList.toggle("active");

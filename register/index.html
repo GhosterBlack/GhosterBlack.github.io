@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torres dev | Registro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../resourses/styles/forms.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro</h1>
+        <div class="controls">
+            <a class="button" href="../index.html" id="backButton">
+                Volver a la pagina de inicio
+            </a>
+        </div>
+        <div class="form">
+            <div class="form-group">
+                <label for="username">Nombre de usuario</label>
+                <input type="text" id="username" name="username" required autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required autocomplete="new-password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar contraseña</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password">
+            </div>
+            <button type="submit">Registrarse</button>
+        </div>
+        <p>
+            ¿Ya tienes cuenta? <a href="../login/index.html">ingresa aqui</a>
+        </p>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
