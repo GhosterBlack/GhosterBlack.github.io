@@ -7,17 +7,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     submit.addEventListener("click", async (e) => {
         e.preventDefault();
-        const emailValue = email.value;
+        /**
+         * @type {string}
+         */
+        let emailValue = email.value;
+        /**
+         * @type {string}
+         */
         const passwordValue = password.value;
+        /**
+         * @type {string}
+         */
         const confirmPasswordValue = confirmPassword.value;
 
         if (passwordValue !== confirmPasswordValue) {
-            alert("Las contraseñas no coinciden");
+            sendToast("Las contraseñas no coinciden");
             return;
         }
+        if (!emailValue || !passwordValue) {
+            sendToast("Por favor, completa todos los campos");
+            return;
+        }
+        if (emailValue.includes("@") || emailValue.length < 2) {
+            sendToast("Por favor, no uses arrobas para tu nombre de usuario, este debe tener al menos dos caracteres", "perma", 0);
+            return;
+        }
+        if (passwordValue.length < 6) {
+            sendToast("La contraseña debe tener al menos 6 caracteres");
+            return;
+        }
+        emailValue += "@tdev.com";
 
         try {
-            const response = await fetch("/user/register", {
+            const response = await fetch(urlServer+"user/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -26,10 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             if (response.ok) {
-                alert("Usuario registrado exitosamente");
+                sendToast("Usuario registrado exitosamente");
                 window.location.href = "/login";
             } else {
-                alert("Error al registrar usuario");
+                sendToast("Error al registrar usuario");
             }
         } catch (error) {
             console.error("Error:", error);
