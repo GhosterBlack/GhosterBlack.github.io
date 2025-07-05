@@ -1,0 +1,9 @@
+main {
+    margin-left: 0px;
+}
+
+header {
+    margin-left: 0;
+    width: calc(100vw - 50px);
+    z-index: 1000;
+}

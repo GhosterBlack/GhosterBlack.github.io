@@ -25,6 +25,8 @@ window.addEventListener("load", ()=> {
     const options = document.getElementById("options");
     const frame = document.getElementById("frame");
 
+    verifyUser();
+
     openOptions.onclick = ()=> {
         options.classList.toggle("active");
     }

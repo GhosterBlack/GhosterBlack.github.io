@@ -1,13 +1,12 @@
 * {
-    color: white;
     padding: 0;
     margin: 0;
     font-family: 'Lucida Console', 'Courier New', monospace;
 
-    color: #0ff;
 }
 
 body {
+    color: #0ff;
     background-color: rgb(48, 48, 48);
 
 }
@@ -343,9 +342,32 @@ iframe {
     transition: all .2s;
 }
 
+.game {
+    width: 200px;
+    background-color: rgba(10, 10, 10, 0.605);
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s;
+    text-shadow: 1px 1px 1px black;
+}
+
+.game:hover {
+    background-color: #007acc;
+}
+
+.game img {
+    width: 100%;
+}
+
 @media (max-width: 800px) {
     .openOptionsPhone {
         display: block;
+    }
+    .game {
+        width: 100px;
+        
     }
     header {
         top: calc(100vh - 50px);

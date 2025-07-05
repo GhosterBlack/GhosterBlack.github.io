@@ -1,0 +1,148 @@
+#pantalla * {
+    position: absolute;
+}
+
+#game {
+    width: 100vw;
+}
+
+#gui {
+    overflow: hidden;
+    background-color: black;
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+    color: black;
+}
+
+
+
+.con div, .bot div {
+    width: 200px;
+    padding: 20px;
+    padding-right: 50px;
+    margin: 0 auto;
+    text-align: right;
+    color: yellow;
+    font-weight: bolder;
+    font-size: 20px;
+    background-size: auto 100%, 99% 120px;
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+
+.bot div:hover {
+    box-shadow: 5px 5px 5px 1px black;
+    transition: all .2s;
+}
+
+.bot div {
+    transition: all .2s;
+    cursor: pointer;
+    background-image: url("resourses/icons/button.png");
+    background-size: 100% 120px;
+    text-align: center;
+    padding-right: 20px;
+}
+
+.money div {
+    background-image: url("resourses/icons/money.png"), url("resourses/icons/contenedor.png");
+}
+
+.energy div {
+    background-image: url("resourses/icons/energy.png"), url("resourses/icons/contenedor.png");
+}
+
+.enemys div {
+    background-image: url("resourses/ships/trombo40.png"), url("resourses/icons/contenedor.png");
+}
+
+.holograma {
+    background-color: rgba(0, 0, 255, 0.337);
+    height: 100%;
+    padding: 20px;
+}
+
+.shipShower:hover {
+    filter: drop-shadow(0px 10px 5px black);
+    transition: all .2s;
+}
+
+.shipShower {
+    background-image: url("resourses/icons/platform.png");
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    cursor: pointer;
+    background-size: 100%;
+    position: relative;
+    transition: all .2s;
+}
+
+.shipShower div {
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(40% - 50px);
+
+}
+
+
+
+.double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#pantalla {
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+    display: none;
+}
+
+.ship .sprite, .projectile {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    transition: transform .2s;
+}
+
+.sprite {
+    width: 100%;
+    height: 100%;
+}
+
+.barra {
+    width: 100%;
+    height: 10px;
+    background-color: gray;
+    margin-top: 100%;
+}
+
+.barra div {
+    width: 100%;
+    height: 100%;
+    background-color: greenyellow;
+}
+
+.sprite.toLeft {
+    transform: rotate3d(0, 2, 1, -40deg);
+}
+
+.sprite.toRight {
+    transform: rotate3d(0, 2, 1, 40deg);
+}
+
+.sprite.toFront {
+    transform: rotate3d(2, 0, 0, -40deg);
+}
+
+.sprite.toBack {
+    transform: rotate3d(1, 0, 0, 180deg);
+}
