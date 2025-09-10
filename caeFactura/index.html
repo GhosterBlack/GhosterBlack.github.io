@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      font-size: 14px;
+      line-height: 1.2;
+      font-family: 'Arial', sans-serif;
+      
+    }
+
+    .formato {
+      color: #3B49DA;
+      width: 700px;
+      padding: 20px;
+
+    }
+
+    input {
+      font-size: 20px;
+      border: none;
+      border-bottom: solid 1px #3B49DA;
+    }
+
+    .soli {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      text-align: center;
+      line-height: 50px;
+      font-size: 20px
+    }
+
+    h1 {
+      color: #3BB575
+    }
+
+    .grid-logo {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      text-align: center;
+    }
+
+    .grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      font-size: 18px;
+    }
+
+    .grid-soli {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .grid div {
+      line-height: 50px
+    }
+
+    .date input {
+      width: 50px;
+      padding: 10px;
+      border: solid 1px #3BB575;
+      text-align: center;
+    }
+
+    .num {
+      font-size: 30px
+    }
+
+    .number {
+      color: #F23314
+    }
+
+    .header {
+      border-top: 1px solid #3BB575;
+      border-bottom: 1px solid #3BB575;
+      padding: 4px
+    }
+
+    .services {
+      border-radius: 10px;
+      border: solid 2px #3BB575;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .services {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("img.png");
+      background-size: 200px;
+      background-repeat: no-repeat;
+      background-position: center 50px;
+      opacity: 0.4;
+      /* Ajusta la transparencia aquí */
+      z-index: 0;
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: 1fr 5fr 2fr;
+      text-align: center;
+    }
+
+    .items div {
+      position: relative;
+    }
+
+    .services input {
+      border: none;
+      border-bottom: none;
+      width: 100%;
+      background: transparent
+    }
+
+    .items input.c {
+      text-align: center
+    }
+
+    .items .f {
+      border-radius: 10px 0px 0px 0px
+    }
+
+    .items .e {
+      border-radius: 0px 10px 0px 0px
+    }
+
+    .abajo {
+      border-bottom: 3px #3BB575 solid;
+    }
+
+    .total {
+      display: grid;
+      grid-template-columns: 6fr 2fr;
+      margin: 0
+    }
+
+    .total p {
+      font-size: 10px;
+      text-align: right;
+      margin: 0
+    }
+
+    .res {
+      background: #23DF6263;
+    }
+
+    .bord {
+      border-right: 3px solid #3BB575
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 80px;
+      padding: 0px;
+      margin: 0px
+    }
+
+    .footer div {
+      padding: 15px;
+    }
+
+    .grid-logo img {
+      width: 100%;
+      filter: opacity(0.5);
+    }
+
+    .sello {
+      position: absolute;
+      display: none;
+    }
+
+    .sello img {
+      width: 200px
+    }
+
+    .medios {
+      left: 250px;
+      top: 600px;
+
+    }
+
+    .bajo {
+      left: 250px;
+      top: 780px
+    }
+
+    
+
+    @media only screen and (max-width: 600px)  {
+      .formato {
+        width: 800px;
+        padding: 10px;
+      }
+      
+      html, 
+      body {
+        font-size: 8px;
+      }
+      
+
+      .services {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="formato" class="formato">
+    <div class="grid-logo">
+      <div>
+        <h1>
+          CERRAJERÍA APERTURA EXPRESS
+        </h1>
+        <p>
+          cerrajería residencial, vehicular, empresarial, apertura residencial, vehicular, caja fuertes, llaves con chip, controles, alarmas
+        </p>
+        <h3>
+          ACTIVIDADES ECONÓMICAS 8020 - 9521 - 4330 - 4520
+        </h3>
+        <h3>
+          NIT. 1.031.184.959-0
+        </h3>
+      </div>
+      <div>
+        <img src="img.png" alt="">
+      </div>
+    </div>
+    <div class="header">
+      Diag. 52B Sur 25-35 - local 1 •
+      <i class="whatsappIcon"></i>
+      320 814 04 20 •
+      cerrajeriaaperturaexpress@gmail.com
+    </div>
+    <div class="grid">
+      <div class="date">
+        FECHA:
+        <input type="text" id="dia">
+        <input type="text" id="mes">
+        <input type="text" id="anio">
+      </div>
+
+      <div class="num">
+        <b>N°</b>
+        <span id="number" class="number">
+          1000
+        </span>
+      </div>
+    </div>
+
+    <div class="soli">
+      señor(es): <input type="text">
+    </div>
+    <div class="soli">
+      Direccion: <input type="text">
+    </div>
+
+    <div class="grid-soli">
+      <div class="soli">
+        Nit.: <input type="text">
+      </div>
+
+      <div class="soli">
+        Teléfono: <input type="text">
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="items">
+        <div class="res bord f">
+          CANT.
+        </div>
+        <div class="res bord">
+          DESCRIPCIÓN
+        </div>
+        <div class="res e">
+          VR.TOTAL
+        </div>
+
+        <div class="bord">
+          <input type="text" class="c">
+        </div>
+        <div class="bord">
+          <input type="text">
+        </div>
+        <div>
+          <input type="text" class="valor c">
+        </div>
+
+        <div class="bord res">
+          <input type="text" class="c">
+        </div>
+        <div class="bord res">
+          <input type="text">
+        </div>
+        <div class="res">
+          <input type="text" class="valor c">
+        </div>
+
+        <div class="bord">
+          <input type="text" class="c">
+        </div>
+        <div class="bord">
+          <input type="text">
+        </div>
+        <div>
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord res">
+          <input type="text" class="c">
+        </div>
+        <div class="bord res">
+          <input type="text">
+        </div>
+        <div class="res">
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord">
+          <input type="text" class="c">
+        </div>
+        <div class="bord">
+          <input type="text">
+        </div>
+        <div>
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord res">
+          <input type="text" class="c">
+        </div>
+        <div class="bord res">
+          <input type="text">
+        </div>
+        <div class="res">
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord">
+          <input type="text" class="c">
+        </div>
+        <div class="bord">
+          <input type="text">
+        </div>
+        <div>
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord res">
+          <input type="text" class="c">
+        </div>
+        <div class="bord res">
+          <input type="text">
+        </div>
+        <div class="res">
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord">
+          <input type="text" class="c">
+        </div>
+        <div class="bord">
+          <input type="text">
+        </div>
+        <div>
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord res">
+          <input type="text" class="c">
+        </div>
+        <div class="bord res">
+          <input type="text">
+        </div>
+        <div class="res">
+          <input type="text" class="c valor">
+        </div>
+
+        <div class="bord abajo">
+          <input type="text" class="c">
+        </div>
+        <div class="bord abajo">
+          <input type="text">
+        </div>
+        <div class="abajo">
+          <input type="text" class="c valor">
+        </div>
+      </div>
+      <div class="total">
+        <p class="bord abajo">
+          TOTAL $ .
+        </p>
+        <div class="abajo">
+          <input type="text" id="total" class="c">
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="bord">
+          Observaciones <br>
+          <input type="text">
+        </div>
+        <div class="bord">
+          Cerrajería Apertura Express
+        </div>
+        <div class="">
+          nombre de quien recibe <br>
+          <input type="text">
+        </div>
+      </div>
+    </div>
+
+    <div class="sello medios">
+      <img src="sello.png" alt="">
+    </div>
+
+    <div class="sello bajo">
+      <img src="sello.png" alt="">
+    </div>
+  </div>
+  <br> <br> <br>
+
+  <button type="button" id="button">
+    Sellar
+  </button>
+
+  <button onclick="guardarFactura()">Guardar como imagen</button>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+  const numeroElemento = document.getElementById("number");
+
+  // Cargar el número guardado al iniciar
+  window.addEventListener("DOMContentLoaded", () => {
+    const numeroGuardado = localStorage.getItem("numeroRecibo");
+    if (numeroGuardado) {
+      numeroElemento.textContent = numeroGuardado;
+    }
+
+    const button = document.getElementById('button');
+    button.onclick = () => {
+      const sellos = document.getElementsByClassName('sello')
+
+      for (let i = 0; i < sellos.length; i++) {
+        sellos[i].style.display = 'block'
+      }
+    }
+
+    const total = document.getElementById('total');
+    const valores = document.getElementsByClassName('valor');
+    for (let i = 0; i < valores.length; i++) {
+      const valor = valores[i];
+      valor.addEventListener('change', () => {
+        let totalPrice = 0;
+        for (let j = 0; j < valores.length; j++) {
+          /**
+           * @type {HTMLInputElement}
+           */
+          const element = valores[j];
+          if (parseFloat(element.value)) {
+            let value = element.value.replaceAll('.', '');
+            value.replaceAll(',', '.')
+            totalPrice += parseFloat(value);
+          }
+
+        }
+        total.value = formatearMiles(totalPrice)
+      })
+    }
+  });
+
+  function formatearMiles(numero) {
+    return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  // Al hacer clic, permitir editar y guardar
+  numeroElemento.addEventListener("click", function() {
+    const actual = this.textContent.trim();
+    const nuevoNumero = prompt("Ingrese el nuevo número de recibo:", actual);
+    if (nuevoNumero !== null && nuevoNumero.trim() !== "") {
+      this.textContent = nuevoNumero.trim();
+      localStorage.setItem("numeroRecibo", nuevoNumero.trim());
+    }
+  });
+
+  function guardarFactura() {
+    const factura = document.querySelector(".formato"); // o el contenedor completo
+    html2canvas(factura).then(canvas => {
+      const link = document.createElement("a");
+      link.download = "factura.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+  }
+</script>
+
+</html>
