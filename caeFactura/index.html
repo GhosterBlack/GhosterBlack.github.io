@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-
   <title>Document</title>
   <style>
     * {
@@ -208,22 +207,7 @@
 
     
 
-    @media only screen and (max-width: 600px)  {
-      .formato {
-        width: 800px;
-        padding: 10px;
-      }
-      
-      html, 
-      body {
-        font-size: 8px;
-      }
-      
-
-      .services {
-        font-size: 10px;
-      }
-    }
+   
   </style>
 </head>
 
@@ -456,6 +440,24 @@
 
   // Cargar el número guardado al iniciar
   window.addEventListener("DOMContentLoaded", () => {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      const style = document.createElement('style');
+      style.textContent = `
+        @media only screen and (max-width: 600px) {
+          .formato {
+            width: 800px;
+            padding: 10px;
+          }
+          html, body {
+            font-size: 8px;
+          }
+          .services {
+            font-size: 10px;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
     const numeroGuardado = localStorage.getItem("numeroRecibo");
     if (numeroGuardado) {
       numeroElemento.textContent = numeroGuardado;
