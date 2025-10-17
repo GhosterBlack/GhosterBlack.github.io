@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <h1>Formulario</h1>
+            <p>Rellena el formulario para personalizar tu invitacion</p>
+            <form id="formulario" class="form-grid two-col">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="evento">Tipo de evento:</label>
+                <select id="evento" name="evento" required>
+                    <option value="boda">Boda</option>
+                    <option value="graduacion">Graduación</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="fecha">Fecha del evento:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="hora">Hora del evento:</label>
+                <input type="time" id="hora" name="hora" required>
+
+                <label for="lugar">Lugar del evento:</label>
+                <input type="text" id="lugar" name="lugar" required>
+
+                <label for="mensaje">Mensaje adicional:</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+
+                <button type="submit">Generar invitación</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 Torres dev | Contacto: Ivan Torres - +57 312 200 3538
+        <br>
+    </footer>
+
+</body>
+<script src="main.js"></script>
+</html>

@@ -82,25 +82,25 @@ h2 {
 .img {
     margin-top: 20px;
     height: 400px;
-    width: 90vw;
+    width: fit-content;
     position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+}
+
+.img .content {
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+  z-index: 200;
 }
 
 .img img {
     height: 400px;
 }
 
-.carrusel div {
-    overflow: hidden;
-    height: 400px;
-    display: flex;
-}
-
-.carrusel div img {
-    animation: alternate linear infinite girar 20s;
-}
-
-.img::before,
+.content::before,
 .img::after {
     content: "";
     position: absolute;
@@ -113,13 +113,59 @@ h2 {
     background-position: center;
     z-index: 100;
     background-position: 0px, 50px;
+
 }
+
+
 
 .img::after {
     top: auto;
     bottom: -50px;
     transform: rotate(180deg);
 }
+
+.container {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.6s ease-out;
+}
+
+/* Se activa cuando entra en pantalla */
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#countdown {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: #d94f6d;
+  background: linear-gradient(to right, #ffe4e1, #fff0f5);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#countdown div {
+    display: inline-block;
+    margin: 0 10px;
+}   
+
+
+input[type="button"], .btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Pacifico', cursive;
+    margin-top: 20px;
+}
+
+
+
 
 @keyframes girar {
     0% {

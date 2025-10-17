@@ -1,5 +1,6 @@
 window.addEventListener("load", ()=> {
     const galery = document.getElementById("galery");
+    const plantillaId = Sistema.getParamUrl("plantillaid");
     const plantillas = [
         {
             name: "Super rosa",
@@ -7,7 +8,8 @@ window.addEventListener("load", ()=> {
             url: "superRosa/index.html",
             colors: ["#FFD1DC", "#FFB3BA", "#FF8B94"],
             font: '"Courgette", serif',
-            fontColor: "#333333"
+            fontColor: "#333333",
+            id: "A001"
         },
         {
             name: "Azul y dorado",
@@ -15,7 +17,8 @@ window.addEventListener("load", ()=> {
             url: "blueAndGold/index.html",
             colors: ["#2b3743", "#c8a85a", "transparent"],
             font: "Arial",
-            fontColor: "#f2f2f2"
+            fontColor: "#f2f2f2",
+            id: "A002"
         }
     ]
 
@@ -60,6 +63,11 @@ window.addEventListener("load", ()=> {
             frame.src = plantilla.url;
             modal.classList.add("active");
         });
+
+        if (plantillaId && plantillaId === plantilla.id) {
+            frame.src = plantilla.url;
+            modal.classList.add("active");
+        }
         galery.appendChild(celda);
         celda.appendChild(nodePlantilla);
         celda.appendChild(textNode);
