@@ -13,15 +13,19 @@
 </head>
 
 <body>
-    <!--  <div class="audio">
-        <img src="imgs/playIcon.png" alt="Play" id="play">
-        <img src="imgs/pauseIcon.png" alt="Pause" id="pause" class="hidden">
-
-        <span>
-            Toca para <span id="playText">reproducir</span> una linda cancion
-        </span>
-    </div>
+    <!--  
  -->
+    <div class="float">
+        <div class="audio">
+            <audio id="audio" loop>
+                <source src="audio/music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <img src="imgs/playIcon.png" alt="Play" id="play">
+            <img src="imgs/pauseIcon.png" alt="Pause" id="pause" class="hidden">
+        </div>
+    </div>
+
     <div class="container text">
         Si dos se acuestana juntos, se darán calor. Pero ¿cómo se mantendrá caliente uno solo? <br>
 
@@ -47,6 +51,19 @@
             <img src="imagenes/1.jpg" alt="">
         </div>
     </div>
+    <br> <br>
+
+    <div class="container texto">
+        Con la bendicion de Jehova y nuestros padres <br>
+        Nos unimos en matrimonio, por eso queremos invitarte
+    </div>
+    <br> <br>
+
+    <div class="img container">
+        <div class="content">
+            <img src="imagenes/4.jpg" alt="">
+        </div>
+    </div>
 
     <br> <br>
 
@@ -56,7 +73,8 @@
             <span>
                 Codigo de vestimenta
             </span>
-            Hemos elegido un c&oacute;digo de vestimenta formal.
+            Hemos elegido un c&oacute;digo de vestimenta formal. <br>
+            Es un dia especial para nosotros, puedes venir del color que quieras menos blanco o beige.
         </p>
     </div>
 
@@ -122,7 +140,8 @@
 
             Direccion del lugar
         </p>
-        <input type="button" value="Ver en Google Maps" onclick="window.open('https://www.google.com/maps/place/10%C2%B029\'21.3%22N+73%C2%B046\'03.5%22W/@10.4892504,-73.7682083,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d10.4892504!4d-73.7670833', '_blank')">
+        <input type="button" value="Ver en Google Maps"
+            onclick="window.open('https://www.google.com/maps/place/10%C2%B029\'21.3%22N+73%C2%B046\'03.5%22W/@10.4892504,-73.7682083,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d10.4892504!4d-73.7670833', '_blank')">
     </div>
 
     <br>
@@ -134,11 +153,12 @@
     <br>
     <div class="container">
         ¡Esperamos verte en nuestro d&iacute;a especial!
-        <a href="https://wa.me/573122003538?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20invitación%20%F0%9F%92%95" target="_blank">
-  <button class="btn">
-    Confirmar asistencia
-  </button>
-</a>
+        <a href="https://wa.me/573122003538?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20invitación%20%F0%9F%92%95"
+            target="_blank">
+            <button class="btn">
+                Confirmar asistencia
+            </button>
+        </a>
     </div>
 </body>
 <script src="main.js"></script>

@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const play = document.getElementById("play");
+    const pause = document.getElementById("pause");
+    /**
+     * @type {HTMLAudioElement}
+     */
+    const audio = document.getElementById("audio");
     const containers = document.querySelectorAll('.container');
 
     const observer = new IntersectionObserver((entries) => {
@@ -35,6 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("minutes").textContent = minutes;
         document.getElementById("seconds").textContent = seconds;
     };
+
+    play.onclick = ()=> {
+        pause.classList.remove("hidden");
+        play.classList.add("hidden");
+        audio.play();
+    }
+
+    pause.onclick = ()=> {
+        play.classList.remove("hidden");
+        pause.classList.add("hidden");
+        audio.pause();
+    }
 
     setInterval(countdown, 1000);
 })
