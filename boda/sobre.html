@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff8f0;
+        width: 480px;
+        height: 480px;
+        position: relative;
+    }
+
+    img {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+    }
+
+        .rotate {
+            transform: rotateY(180deg);
+        }
+
+        .right {
+            right: 0;
+        }
+
+        .bottom {
+            bottom: 0;
+            top: auto;
+            transform: rotateX(180deg);
+        }
+
+        .bottom.right {
+            transform: rotateX(180deg) rotateY(180deg);
+        }
+
+        div.sobre {
+            width: 80%;
+            height: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: block;
+
+        }
+
+        div.sobre span {
+            position: absolute;
+            top: 90%;
+            width: 100%;
+            text-align: center;
+            font-family: 'Quintessential', cursive;
+            font-size: 20px;
+            color: #471408;
+        }
+
+        div.sobre img {
+            height: auto;
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <img src="imgs/florIcon.png" alt="">
+    <img src="imgs/florIcon.png" class="rotate right" alt="">
+    <img src="imgs/florIcon.png" class="bottom" alt="">
+    <img src="imgs/florIcon.png" class="bottom rotate right" alt="">
+
+    <div class="sobre">
+        <span>
+            Preciona el sobre para abrir la invitaci&oacute;n. <br>
+        </span>
+        <a href="https://torresdev.onrender.com/boda/?invitado=1">
+            <img src="imgs/sobre.png" class="sobre" alt="">
+        </a>
+    </div>
+    <button style="margin-top: 120%;" onclick="generarPDF()">Descargar PDF</button>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  function generarPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({
+      orientation: "portrait",
+      unit: "px",
+      format: [480, 480]
+    });
+
+    // Fondo
+    doc.setFillColor("#fff8f0");
+    doc.rect(0, 0, 480, 480, "F");
+
+    // Cargar imágenes
+    const flor = new Image();
+    flor.src = "imgs/florIcon.png";
+
+    const sobre = new Image();
+    sobre.src = "imgs/sobre.png";
+
+    flor.onload = () => {
+      sobre.onload = () => {
+        // 🌸 Flores en las esquinas
+        doc.addImage(flor, "PNG", 0, 0, 150, 150); // arriba izquierda
+        doc.addImage(flor, "PNG", 330, 0, 150, 150, "rotate1", "NONE", 180); // arriba derecha (rotada Y)
+        doc.addImage(flor, "PNG", 0, 330, 150, 150, "rotate2", "NONE", 90); // abajo izquierda (rotada X)
+        doc.addImage(flor, "PNG", 330, 330, 150, 150, "rotate3", "NONE", 270); // abajo derecha (rotada XY)
+
+        // ✉️ Sobre centrado
+        doc.addImage(sobre, "PNG", 96, 96, 288, 288); // centrado
+
+        // 🔗 Enlace clickeable sobre el sobre
+        doc.link(96, 96, 288, 288, {
+          url: "https://torresdev.onrender.com/boda/?invitado=1"
+        });
+
+        // 📝 Texto debajo del sobre
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(16);
+        doc.setTextColor("#471408");
+        doc.text("Presiona el sobre para abrir la invitación", 240, 400, { align: "center" });
+
+        doc.save("invitacion.pdf");
+      };
+    };
+  }
+</script>
+</html>
