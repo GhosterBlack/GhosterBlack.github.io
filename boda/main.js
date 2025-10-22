@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Yeissimar", "Nicolas", "Familia Amador", "Papo y Karen", "Juan Pablo", "Manuel", "Cesar", "Aurora", "Lupe",
         "Simon, Juliet y Jael", "Eduardo", "Maria", "Franklin", "Tere y Alvaro", "Juan Cobos", "Never y Leti",
         "Jaime, Monica e Isabella", "Pedro y Clara", "Lucho y Pilar", "Esteban y Valentina",
-        "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda"
+        "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda", "Ivan Torres"
     ];
 
     const masDeUnoInvitados = {
@@ -38,11 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         "audio/music3.mp3"
     ]
 
+    const confirmar = document.getElementById("confirmar");
+
     /**
      * Devuelve un entero aleatorio entre min y max (ambos incluidos).
      * Si solo se pasa un argumento se toma como max y min = 0.
      */
-    function elegirNumeroAleatorio  (min = 0, max) {
+    function elegirNumeroAleatorio(min = 0, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
@@ -54,10 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const pause = document.getElementById("pause");
     const href = location.search.substring(1);
     let isZoom = false;
+    let nombre = "invitado";
 
     if (href.includes("invitado")) {
         const invitado = parseFloat(decodeURIComponent(href.split('=')[1].replace(/\+/g, ' ')));
         let invitadoNombre = invitados[invitado];
+        nombre = invitadoNombre;
         if (invitado >= 0 && invitado < invitados.length) {
             const cantidadSpan = document.getElementById("cantidad");
             if (invitadoNombre.includes(" y ") || invitadoNombre.includes("Familia") || invitadoNombre.includes(" e ")) {
@@ -89,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     audio.volume = 0.1;
 
-    audio.onended = ()=> {
+    audio.onended = () => {
         audio.src = sourcesAudio[elegirNumeroAleatorio(0, sourcesAudio.length - 1)];
         audio.play();
     }
@@ -128,6 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("minutes").textContent = minutes;
         document.getElementById("seconds").textContent = seconds;
     };
+
+    fetch("https://torresdev-backend.onrender.com/confirm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre: "Natalia" })
+    })
+        .then(res => res.text())
+        .then(msg => alert(msg));
 
     play.onclick = () => {
         pause.classList.remove("hidden");
