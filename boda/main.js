@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch("https://torresdev-backend.onrender.com/invs/confirm", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nombre: "Natalia" })
+            body: JSON.stringify({ nombre: nombre })
         })
             .then(res => res.text())
             .then(msg => alert(msg));
