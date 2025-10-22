@@ -133,13 +133,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("seconds").textContent = seconds;
     };
 
-    fetch("https://torresdev-backend.onrender.com/confirm", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombre: "Natalia" })
-    })
-        .then(res => res.text())
-        .then(msg => alert(msg));
+    confirmar.onclick = () => {
+        fetch("https://torresdev-backend.onrender.com/confirm", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre: "Natalia" })
+        })
+            .then(res => res.text())
+            .then(msg => alert(msg));
+    }
+
 
     play.onclick = () => {
         pause.classList.remove("hidden");
