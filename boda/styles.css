@@ -110,7 +110,7 @@ h2 {
 }
 
 .texto {
-    background: #fffff0;
+    background: #e1e8ff;
     font-size: 30px;
     margin-left: 0px;
     width: calc(100% + 1px);
@@ -155,11 +155,19 @@ h2 {
 #countdown {
     font-family: 'Great Vibes', cursive;
     font-size: 32px;
-    color: #d94f6d;
-    background: linear-gradient(to right, #ffe4e1, #fff0f5);
+    color: #050036;
+    background: #e1e8ff;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
+    border: 1px solid rgb(1, 1, 74);
+}
+
+#countdown span {
+    border-bottom: 2px solid rgb(28, 1, 74);
+    font-family: "Handjet", cursive;
+    
+    
 }
 
 #countdown div {

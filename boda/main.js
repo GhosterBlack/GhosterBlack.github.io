@@ -32,6 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "Franklin"
         ]
     }
+    const sourcesAudio = [
+        "audio/music1.mp3",
+        "audio/music2.mp3",
+        "audio/music3.mp3"
+    ]
+
+    /**
+     * Devuelve un entero aleatorio entre min y max (ambos incluidos).
+     * Si solo se pasa un argumento se toma como max y min = 0.
+     */
+    function elegirNumeroAleatorio  (min = 0, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
     buscar = (nombre) => {
         const lowerNombre = nombre.toLowerCase();
@@ -71,6 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     const audio = document.getElementById("audio");
     const containers = document.querySelectorAll('.container');
+
+    audio.src = sourcesAudio[elegirNumeroAleatorio(0, sourcesAudio.length - 1)];
+
+    audio.volume = 0.1;
+
+    audio.onended = ()=> {
+        audio.src = sourcesAudio[elegirNumeroAleatorio(0, sourcesAudio.length - 1)];
+        audio.play();
+    }
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
