@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     confirmar.onclick = () => {
-        fetch("https://torresdev-backend.onrender.com/confirm", {
+        fetch("https://torresdev-backend.onrender.com/invs/confirm", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nombre: "Natalia" })
