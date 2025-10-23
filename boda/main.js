@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     const confirmar = document.getElementById("confirmar");
+    let confirmado = false;
 
     /**
      * Devuelve un entero aleatorio entre min y max (ambos incluidos).
@@ -134,13 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     confirmar.onclick = () => {
+        if (confirmado) {
+            return;
+        }
+        confirmado = true;
         fetch("https://torresdev-backend.onrender.com/invs/confirm", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nombre: nombre })
         })
-            .then(res => res.text())
-            .then(msg => alert(msg));
+            .then(()=> {
+                const wame = document.getElementById("wame");
+                wame.click();
+            })
     }
 
 
@@ -154,6 +161,18 @@ document.addEventListener('DOMContentLoaded', () => {
         play.classList.remove("hidden");
         pause.classList.add("hidden");
         audio.pause();
+    }
+
+    if (isZoom) {
+        fetch("https://torresdev-backend.onrender.com/invs/getzoom", { 
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("urlZoom").href = data.urlZoom;
+                document.getElementById("zoomUrlSpace").style.display = "block";
+            });
     }
 
     setInterval(countdown, 1000);

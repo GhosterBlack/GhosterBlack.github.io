@@ -32,17 +32,27 @@ body {
     cursor: pointer;
 }
 
+.float {
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+
+}
 .audio {
-    position: fixed;
-    top: 80vh;
-    right: 20px;
-    z-index: 300;
-    background-color: var(--secondary-color);
     padding: 10px;
     border-radius: 100%;
-    display: flex;
+    background-color: var(--secondary-color);
 }
 
+.float div {
+    display: flex;
+    align-items: center;
+}
+
+.linea-rosa {
+    border-top: 3px solid var(--secondary-color);
+    height: 0px;
+    width: 100%;
+}
 
 .container {
     width: 85%;
@@ -93,6 +103,8 @@ h2 {
     padding: 0;
     position: relative;
     border-radius: 50px;
+    overflow: hidden;
+
     /* overflow: hidden; */
     /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0)); */
@@ -107,7 +119,19 @@ h2 {
     width: 100%;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
+    animation: girar 10s linear infinite;
+
 }
+
+/* Carousel blur transition */
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+
+
 
 .texto {
     background: #e1e8ff;
@@ -203,12 +227,11 @@ nav .centro {
 
 
 @keyframes girar {
-    0% {
+    0%, 35%, 100% {
         transform: translateX(0);
     }
-
-    100% {
-        transform: translateX(-300%);
+    40%, 95% {
+        transform: translateX(-100%);
     }
 
 }

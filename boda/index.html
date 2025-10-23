@@ -16,21 +16,13 @@
 <body>
     <!--  
  -->
-    <div class="float">
-        <div class="audio">
-            <audio id="audio" loop>
-            </audio>
-            <img src="imgs/playIcon.png" alt="Play" id="play">
-            <img src="imgs/pauseIcon.png" alt="Pause" id="pause" class="hidden">
-        </div>
-    </div>
-
-    <div class="container">
-        <h1>
-            ¡¡ Nos Casamos !!
+ 
+ <div class="container">
+     <h1>
+         ¡¡ Nos Casamos !!
         </h1>
     </div>
-
+    
     <div class="container">
         <h2>
             Iv&aacute;n Torres <br>
@@ -38,7 +30,24 @@
             Natalia Bohorquez
         </h2>
     </div>
+    <br>
+    
+    <label for="audio" class="float">
+        <div>
+            <nav class="linea-rosa"></nav>
+        </div>
+        <div class="audio">
+            <audio id="audio" loop>
+            </audio>
+            <img src="imgs/playIcon.png" alt="Play" id="play">
+            <img src="imgs/pauseIcon.png" alt="Pause" id="pause" class="hidden">
+        </div>
+        <div>
+            <nav class="linea-rosa"></nav>
+        </div>
 
+    </label>
+    
     <div class="container text">
         Si dos se acuestan juntos, se darán calor. Pero ¿cómo se mantendrá caliente uno solo? <br>
 
@@ -52,6 +61,7 @@
     <div class="img container">
         <div class="content">
             <img src="imagenes/1.jpg" alt="">
+            <img src="imagenes/5.jpg" alt="">
         </div>
     </div>
     <br> <br>
@@ -65,6 +75,7 @@
     <div class="img container">
         <div class="content">
             <img src="imagenes/4.jpg" alt="">
+            <img src="imagenes/6.jpg" alt="">
         </div>
     </div>
 
@@ -98,6 +109,8 @@
     <div class="img container">
         <div class="content">
             <img src="imagenes/2.jpg" alt="">
+            <img src="imagenes/7.jpg" alt="">
+
         </div>
     </div>
 
@@ -149,6 +162,12 @@
             </div>
         </div>
         </p>
+
+        <div id="zoomUrlSpace" style="display: none;">
+            <a id="urlZoom">
+                <button class="btn">Unirse a Zoom</button>
+            </a>
+        </div>
     </div>
 
     <div class="container info">
@@ -158,16 +177,17 @@
                 Lugar
             </span>
 
-            Direccion del lugar
+            Cra. 36a #56-61, Bogotá
         </p>
         <input type="button" value="Ver en Google Maps"
-            onclick="window.open('https://www.google.com/maps/place/10%C2%B029\'21.3%22N+73%C2%B046\'03.5%22W/@10.4892504,-73.7682083,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d10.4892504!4d-73.7670833', '_blank')">
+            onclick="window.open('https://maps.app.goo.gl/qJsbBGu7WrSc2oJu8?g_st=aw')">
     </div>
 
     <br>
     <div class="img container">
         <div class="content">
             <img src="imagenes/3.jpg" alt="">
+            <img src="imagenes/8.jpg" alt="">
         </div>
     </div>
     <br>
@@ -179,6 +199,7 @@
         <button class="btn" id="confirmar">
             Confirmar asistencia
         </button>
+        <a href="https://wa.me/573122003538?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20invitación%20%F0%9F%92%95" id="wame"></a>
     </div>
     <br> <br> <br> <br> <br>
 </body>
