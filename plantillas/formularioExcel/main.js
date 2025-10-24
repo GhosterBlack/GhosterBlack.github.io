@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
     genero = document.getElementById("genero"),
     content = document.getElementById("content");
 
+    const forms = document.getElementsByClassName("form");
+
+
     send.addEventListener("click", ()=> {
         const user = {
             nombre: nombre.value,
@@ -41,6 +44,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
             body: JSON.stringify(user),
             headers: { "Content-Type": "application/json" },
         });
+    })
+
+    see.addEventListener("click", ()=> {
+        for (let i = 0; i < forms.length; i++) {
+            const form = forms[i];
+            form.classList.toggle("hidden")
+        }
     })
 
     fetch (urlServer + "invs/getcelda", {
