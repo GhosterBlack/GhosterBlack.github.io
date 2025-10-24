@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
                 </nav>
                 <nav>
                     <img src="res/gender-icon.png" alt="Genero">
-                    <p>${element.Genero === 'M' ? 'Masculino' : 'Femenino'} </p>
+                    <p>${element.Genero === 'm' ? 'Masculino' : 'Femenino'} </p>
                 </nav>
                 </section>`
                 content.innerHTML += info;
