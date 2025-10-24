@@ -63,19 +63,19 @@ document.addEventListener("DOMContentLoaded", ()=> {
                 const info = `<section class="infoRegister">
                 <nav>
                     <img src="res/name-icon.png" alt="Nombre">
-                    <p>${element.nombre}</p>
+                    <p>${element.Nombre}</p>
                 </nav>
                 <nav>
                     <img src="res/work-icon.png" alt="Profesion">
-                    <p>${element.profesion}</p>
+                    <p>${element.Profesion}</p>
                 </nav>
                 <nav>
                     <img src="res/years-icon.png" alt="Edad">
-                    <p>${element.edad} años</p>
+                    <p>${element.Edad} años</p>
                 </nav>
                 <nav>
                     <img src="res/gender-icon.png" alt="Genero">
-                    <p>${element.genero === 'M' ? 'Masculino' : 'Femenino'} </p>
+                    <p>${element.Genero === 'M' ? 'Masculino' : 'Femenino'} </p>
                 </nav>
                 </section>`
                 content.innerHTML += info;
