@@ -19,6 +19,15 @@ window.addEventListener("load", ()=> {
             font: "Arial",
             fontColor: "#f2f2f2",
             id: "A002"
+        },
+        {
+            name: "Formulario para registros excel",
+            text: "Excel",
+            url: "formularioExcel/index.html",
+            colors: ["#3a3a75", "#5a5a9f", "#00bfff"],
+            font: "Arial",
+            fontColor: "white",
+            id: "F002"
         }
     ]
 

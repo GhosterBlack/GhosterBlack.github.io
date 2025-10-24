@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de registro excel</title>
+<link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="form">
+        <div class="disclaimer">
+            <h5>
+                Por favor no ingrese datos personales.
+                Este formulario es solo una prueba de una funcion y cualquier persona 
+                puede acceder a la informacion del mismo
+            </h5>
+        </div>
+        <section class="infoInput">
+            <label for="nombre">
+                Ingrese su nombre:
+            </label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+        </section>
+
+        <section class="infoInput">
+            <label for="profesion">
+                Ingrese la profesion a la que se dedica:
+            </label>
+            <input type="text" id="profesion" placeholder="Profesion">
+        </section>
+
+        <section class="infoInput">
+            <label for="edad">
+                Ingrese su edad actual:
+            </label>
+            <input type="number" name="edad" id="edad" placeholder="Edad">
+        </section>
+
+        <section class="infoInput">
+            <label for="genero">
+                Seleccione su genero:
+            </label>
+
+            <select name="genero" id="genero">
+                <option value="m">Masculino</option>
+                <option value="f">Femenino</option>
+            </select>
+        </section>
+
+        <section class="infoInput">
+            <input type="button" value="Enviar" id="send">
+        </section>
+
+        <section class="infoInput">
+            <input type="button" value="Ver registros" id="see">
+        </section>
+    </div>
+
+    <div class="form hidden">
+        <div class="disclaimer">
+            <h5>
+                Aqui encontraras informacion de prueba que las personas hayan ingresado solo para
+                probar las funciones de guardado en excel
+            </h5>
+        </div>
+        <div id="content" class="contentInfo">
+            
+        </div>
+    </div>
+</body>
+<script src="../../resourses/sistema.js"></script>
+<script src="main.js"></script>
+</html>

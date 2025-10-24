@@ -1,0 +1,109 @@
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1e1e2f; border-radius: 4px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6a5acd, #00bfff);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7b68ee, #1e90ff);
+}
+
+/* === Layout === */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4b4b9f, #6a5acd);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* === Form === */
+.form {
+  max-width: 400px;
+  height: 80vh;
+  padding: 20px;
+  background-color: #2e2e6f;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+}
+
+.form section {
+  margin-top: 20px;
+}
+
+/* === Disclaimer === */
+.disclaimer {
+  padding: 10px;
+  background-color: #5c5c2f;
+  border-radius: 10px;
+  border: solid 2px #3f3f1a;
+}
+
+/* === Inputs === */
+.infoInput {
+  padding: 10px;
+}
+
+.infoInput label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.infoInput input,
+.infoInput select {
+  width: 100%;
+  padding: 10px;
+  background-color: #3a3a75;
+  color: white;
+  border: 1px solid #5a5a9f;
+  border-radius: 5px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border: 1px solid #00bfff;
+  box-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+}
+
+::placeholder {
+  color: #cccccc;
+}
+
+.hidden {
+    display: none;
+}
+
+.infoRegister {
+    border: solid 1px #3a3a75;
+    border-radius: 5px;
+}
+
+.infoRegister img {
+    width: 100%;
+    padding: 10px;
+}
+
+.infoRegister nav {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    border-bottom: 1px solid #3a3a75;
+    text-align: center;
+}
+
+.infoRegister p {
+    border-left: 1px solid #3a3a75;
+    padding-left: 10px;
+    line-height: 35px;
+    text-align: start;
+}
