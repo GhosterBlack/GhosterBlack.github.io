@@ -33,25 +33,22 @@ body {
 }
 
 .float {
-    display: grid;
-    grid-template-columns: 4fr 1fr 4fr;
-
-}
-.audio {
-    padding: 10px;
-    border-radius: 100%;
-    background-color: var(--secondary-color);
+    text-align: center;
+    width: 70vw;
+    margin: 0 auto;
 }
 
-.float div {
-    display: flex;
-    align-items: center;
+.progress-container {
+  width: 100%;
+  margin-top: 10px;
 }
 
-.linea-rosa {
-    border-top: 3px solid var(--secondary-color);
-    height: 0px;
-    width: 100%;
+#progressBar {
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  accent-color: black; /* azul elegante */
+  cursor: pointer;
 }
 
 .container {
@@ -102,7 +99,6 @@ h2 {
     margin: 0;
     padding: 0;
     position: relative;
-    border-radius: 50px;
     overflow: hidden;
 
     /* overflow: hidden; */
@@ -130,8 +126,9 @@ h2 {
     display: flex;
 }
 
-
-
+.onlyZoom {
+    display: none;
+}
 
 .texto {
     background: #e1e8ff;
@@ -211,6 +208,10 @@ input[type="button"],
     font-size: 26px;
     font-family: 'Tangerine', cursive;
     margin-top: 20px;
+}
+
+.btn.disabled {
+    background-color: gray;
 }
 
 nav {

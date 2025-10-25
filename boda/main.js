@@ -3,33 +3,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const invitados = [
         "Anita", "Olguita", "Alba y Robert", "David, Yurany y Valeria", "Josue y Eloina",
         "Augusto", "Yimmy, Maribel y Juan Esteban", "Familia Garboza", "Teresita", "Adriana",
-        "Maria Helena.", "Naryis", "Miguel y Pilar", "Victor y Fidelia", "Ronald",
+        "Maria Helena", "Naryis", "Miguel y Pilar", "Victor y Fidelia", "Ronald",
         "Lucho", "Fercho", "Flor", "Mauro y Mariluz", "Cristian y Angie", "Hector y Judith",
         "Zully", "Fanny", "Claudia", "Henry, Claudia y Esteban",
         "Marco", "Miguel y Gladiz", "Jhon y Yazmin", "Maye y Nahomi", "Jose y Yulieth",
         "Diannys", "Familia Piñeros", "Guillermo y Magda", "Emiro y Esperanza", "Daniel y Patricia", "Lien y Euledis",
-        "Sofia", "Gustavo", "Amparo y Eugenio", "Sara", "Jesus", "Pilar",
+        "Sofia", "Gustavo", "Amparo y Eugenio", "Sara", "Jesus",
         "Hanny", "Jorge", "Ivan y Mariela", "Familia Casadessus", "Luna", "Samuel",
         "Yeissimar", "Nicolas", "Familia Amador", "Papo y Karen", "Juan Pablo", "Manuel", "Cesar", "Aurora", "Lupe",
-        "Simon, Juliet y Jael", "Eduardo", "Maria", "Franklin", "Tere y Alvaro", "Juan Cobos", "Never y Leti",
+        "Simon, Juliet y Jael", "Eduardo y Maria", "Franklin", "Tere y Alvaro", "Juan Cobos", "Never y Leti",
         "Jaime, Monica e Isabella", "Pedro y Clara", "Lucho y Pilar", "Esteban y Valentina",
-        "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda", "Ivan Torres"
+        "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda", "Ivan Torres", "James y Elizabeth",
+        "Santiago", "Mateo", "Justina"
     ];
 
     const masDeUnoInvitados = {
         2: ["Alba y Robert", "Josue y Eloina", "Miguel y Pilar", "Victor y Fidelia", "Mauro y Mariluz",
             "Cristian y Angie", "Hector y Judith", "Miguel y Gladiz", "Jhon y Yasmin", "Maye y Nahomi",
-            "Jose y Yulieth", "Guillermo y Magda", "Emiro y Esperanza", "Daniel y Patricia", "Lien y Euledis",
-            "Amparo y Eugenio", "Ivan y Mariela", "Tere y Alvaro", "Never y Leti"
+            "Guillermo y Magda", "Emiro y Esperanza", "Daniel y Patricia",
+            "Amparo y Eugenio", "Ivan y Mariela", "Tere y Alvaro", "Never y Leti", "Eduardo y Maria"
         ],
         3: ["David, Yurany y Valeria", "Yimmy, Maribel y Juan Esteban", "Simon, Juliet y Jael",
             "Jaime, Monica e Isabella", "Henry, Claudia y Esteban"
         ],
-        4: ["Familia Garboza", "Familia Piñeros", "Familia Casadessus"],
+        4: ["Familia Garboza", "Familia Piñeros"],
         zoom: [
             "Pedro y Clara", "Lucho y Pilar", "Esteban y Valentina",
             "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda", "Familia Amador", "Jorge y Nubia",
-            "Franklin"
+            "Franklin", "Maye", "Nahomi", "Jose y Yulieth", "Diannys", "Lien y Euledis", "James y Elizabeth",
+            "Santiago", "Mateo", "Familia Casadessus"
         ]
     }
     const sourcesAudio = [
@@ -37,8 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "audio/music2.mp3",
         "audio/music3.mp3"
     ]
-
+// calle 42 sur #27 51
     const confirmar = document.getElementById("confirmar");
+    const noZoom = document.getElementsByClassName("noZoom");
+    const onlyZoom = document.getElementsByClassName("onlyZoom");
     let confirmado = false;
 
     /**
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nombre: nombre })
         })
-            .then(()=> {
+            .then(() => {
                 const wame = document.getElementById("wame");
                 wame.click();
             })
@@ -163,15 +167,55 @@ document.addEventListener('DOMContentLoaded', () => {
         audio.pause();
     }
 
+    const playBtn = document.getElementById("play");
+    const pauseBtn = document.getElementById("pause");
+    const progressBar = document.getElementById("progressBar");
+
+    // Cargar audio
+
+    // Play/Pause
+    playBtn.onclick = () => {
+        audio.play();
+        playBtn.classList.add("hidden");
+        pauseBtn.classList.remove("hidden");
+    };
+
+    pauseBtn.onclick = () => {
+        audio.pause();
+        pauseBtn.classList.add("hidden");
+        playBtn.classList.remove("hidden");
+    };
+
+    // Actualizar barra de progreso
+    audio.addEventListener("timeupdate", () => {
+        progressBar.max = Math.floor(audio.duration);
+        progressBar.value = Math.floor(audio.currentTime);
+    });
+
+    // Permitir al usuario mover la barra
+    progressBar.addEventListener("input", () => {
+        audio.currentTime = progressBar.value;
+    });
+
     if (isZoom) {
-        fetch("https://torresdev-backend.onrender.com/invs/getzoom", { 
+        for (let i = 0; i < noZoom.length; i++) {
+            const element = noZoom[i];
+            element.style.display = "none";
+
+        }
+
+        for (let i = 0; i < onlyZoom.length; i++) {
+            const element = onlyZoom[i];
+            element.style.display = "block";
+        }
+        fetch("https://torresdev-backend.onrender.com/invs/getzoom", {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         })
             .then(response => response.json())
             .then(data => {
                 document.getElementById("urlZoom").href = data.urlZoom;
-                document.getElementById("zoomUrlSpace").style.display = "block";
+                document.getElementById("zoomUrlSpace").classList.remove("disabled")
             });
     }
 

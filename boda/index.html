@@ -16,13 +16,13 @@
 <body>
     <!--  
  -->
- 
- <div class="container">
-     <h1>
-         ¡¡ Nos Casamos !!
+
+    <div class="container">
+        <h1>
+            ¡¡ Nos Casamos !!
         </h1>
     </div>
-    
+
     <div class="container">
         <h2>
             Iv&aacute;n Torres <br>
@@ -31,39 +31,40 @@
         </h2>
     </div>
     <br>
-    
-    <label for="audio" class="float">
-        <div>
-            <nav class="linea-rosa"></nav>
-        </div>
+
+    <div for="audio" class="float">
+        <p>
+            Dale play a nuestra cancion
+        </p>
         <div class="audio">
             <audio id="audio" loop>
             </audio>
+            <div class="progress-container">
+                <input type="range" id="progressBar" value="0" step="1">
+            </div>
             <img src="imgs/playIcon.png" alt="Play" id="play">
             <img src="imgs/pauseIcon.png" alt="Pause" id="pause" class="hidden">
         </div>
-        <div>
-            <nav class="linea-rosa"></nav>
-        </div>
 
-    </label>
-    
+    </div>
+
     <div class="container text">
         Si dos se acuestan juntos, se darán calor. Pero ¿cómo se mantendrá caliente uno solo? <br>
 
         Eclesiast&eacute;s 4:11
     </div>
+    <div class="img container">
+        <div class="content">
+            <img src="imagenes/2.jpg" alt="">
+            <img src="imagenes/7.jpg" alt="">
 
+        </div>
+    </div>
 
 
     <br>
 
-    <div class="img container">
-        <div class="content">
-            <img src="imagenes/1.jpg" alt="">
-            <img src="imagenes/5.jpg" alt="">
-        </div>
-    </div>
+
     <br> <br>
 
     <div class="container texto">
@@ -81,7 +82,7 @@
 
     <br> <br>
 
-    <div class="container info">
+    <div class="container info noZoom">
         <img src="imgs/vestIco.png" alt="" srcset="">
         <p>
             <span>
@@ -94,7 +95,7 @@
         </p>
     </div>
 
-    <div class="container info">
+    <div class="container info noZoom">
         <img src="imgs/sobreIco.png" alt="">
         <p>
             <span>
@@ -104,13 +105,28 @@
             Tu presencia es el mejor regalo, pero si deseas obsequiarnos algo, puedes hacerlo en forma de sobres
         </p>
     </div>
+
+    <div class="container info onlyZoom">
+        <img src="imgs/zoomIcon.png" alt="">
+        <p>
+            <span>
+                Enlace a zoom
+            </span>
+        <div id="zoomUrlSpace">
+            <a id="urlZoom">
+                <button class="btn disabled">Unirse a Zoom</button>
+            </a>
+        </div>
+        </p>
+    </div>
+
+    <div></div>
     <br>
 
     <div class="img container">
         <div class="content">
-            <img src="imagenes/2.jpg" alt="">
-            <img src="imagenes/7.jpg" alt="">
-
+            <img src="imagenes/1.jpg" alt="">
+            <img src="imagenes/5.jpg" alt="">
         </div>
     </div>
 
@@ -136,9 +152,28 @@
                 2025
             </div>
         </nav>
-        <i style="font-family: 'Macondo', cursive; font-size: 20px;">
-            4: 00 PM
-        </i>
+        <div class="onlyZoom">
+            <p>
+                Hora de conferencia
+            </p>
+            <i style="font-family: 'Macondo', cursive; font-size: 20px;">
+                2: 30 PM
+            </i>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr;" class="noZoom">
+            <p>
+                Hora de conferencia
+            </p>
+            <p>
+                Hora de recepcion
+            </p>
+            <i style="font-family: 'Macondo', cursive; font-size: 20px;">
+                2: 30 PM
+            </i>
+            <i style="font-family: 'Macondo', cursive; font-size: 20px;">
+                4: 00 PM
+            </i>
+        </div>
 
         </p>
         <br> <br>
@@ -163,24 +198,37 @@
         </div>
         </p>
 
-        <div id="zoomUrlSpace" style="display: none;">
-            <a id="urlZoom">
-                <button class="btn">Unirse a Zoom</button>
-            </a>
-        </div>
+
     </div>
 
-    <div class="container info">
+    <div class="container info noZoom">
         <img src="imgs/lugar.png" alt="">
         <p>
-            <span>
-                Lugar
-            </span>
 
-            Cra. 36a #56-61, Bogotá
+            <span>
+                Conferencia
+            </span>
+        <div>
+            calle 42 sur #27 51, Bogot&aacute;
+        </div>
+        <div>
+            <input type="button" value="Ver en Google Maps"
+                onclick="window.open('https://maps.app.goo.gl/GLnTNWmqEaKvLJvt7?g_st=aw')">
+        </div>
+        <br> <br>
+        <span>
+            Recepcion
+        </span>
+        <div>
+            Cra. 36a #56-61, Bogot&aacute;
+        </div>
+        <div>
+            <input type="button" value="Ver en Google Maps"
+                onclick="window.open('https://maps.app.goo.gl/qJsbBGu7WrSc2oJu8?g_st=aw')">
+        </div>
+
         </p>
-        <input type="button" value="Ver en Google Maps"
-            onclick="window.open('https://maps.app.goo.gl/qJsbBGu7WrSc2oJu8?g_st=aw')">
+
     </div>
 
     <br>
@@ -199,7 +247,8 @@
         <button class="btn" id="confirmar">
             Confirmar asistencia
         </button>
-        <a href="https://wa.me/573122003538?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20invitación%20%F0%9F%92%95" id="wame"></a>
+        <a href="https://wa.me/573122003538?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20invitación%20%F0%9F%92%95"
+            id="wame"></a>
     </div>
     <br> <br> <br> <br> <br>
 </body>
