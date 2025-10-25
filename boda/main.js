@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Simon, Juliet y Jael", "Eduardo y Maria", "Franklin", "Tere y Alvaro", "Juan Cobos", "Never y Leti",
         "Jaime, Monica e Isabella", "Pedro y Clara", "Lucho y Pilar", "Esteban y Valentina",
         "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda", "Ivan Torres", "James y Elizabeth",
-        "Santiago", "Mateo", "Justina"
+        "Santiago", "Mateo", "Justina", "Erianna", "Miriam, Armando y David"
     ];
 
     const masDeUnoInvitados = {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Amparo y Eugenio", "Ivan y Mariela", "Tere y Alvaro", "Never y Leti", "Eduardo y Maria"
         ],
         3: ["David, Yurany y Valeria", "Yimmy, Maribel y Juan Esteban", "Simon, Juliet y Jael",
-            "Jaime, Monica e Isabella", "Henry, Claudia y Esteban"
+            "Jaime, Monica e Isabella", "Henry, Claudia y Esteban", "Miriam, Armando y David"
         ],
         4: ["Familia Garboza", "Familia Piñeros"],
         zoom: [
