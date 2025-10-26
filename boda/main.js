@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Franklin", "Maye", "Nahomi", "Jose y Yulieth", "Diannys", "Lien y Euledis", "James y Elizabeth",
             "Santiago", "Mateo", "Familia Casadessus",
             "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
-            "Jorge y Genesis"
+            "Jorge y Genesis", "Manuel", "Papo y Karen", 
         ]
     }
     const sourcesAudio = [
