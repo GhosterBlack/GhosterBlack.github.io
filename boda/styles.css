@@ -20,6 +20,9 @@ body {
     /* color: rgb(62, 62, 62); */
     color: rgb(19, 19, 19);
     font-size: 28px;
+    max-width: 800px;
+    position: relative;
+    margin: 0 auto;
 }
 
 .hidden {
@@ -34,7 +37,7 @@ body {
 
 .float {
     text-align: center;
-    width: 70vw;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -226,6 +229,35 @@ nav .centro {
     border-right: 1px solid var(--secondary-color);
 }
 
+
+.overflow {
+    position: fixed;
+    width: 100vw;
+    height: 100dvh;
+    background-color: #00000073;
+    top: 0px;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.overflow.active {
+    display: flex;
+}
+
+.notification {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header {
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 10px;
+    margin-bottom: 32px;
+}
 
 @keyframes girar {
     0%, 35%, 100% {

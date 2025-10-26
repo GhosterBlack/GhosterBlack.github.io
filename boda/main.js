@@ -14,35 +14,50 @@ document.addEventListener('DOMContentLoaded', () => {
         "Simon, Juliet y Jael", "Eduardo y Maria", "Franklin", "Tere y Alvaro", "Juan Cobos", "Never y Leti",
         "Jaime, Monica e Isabella", "Pedro y Clara", "Lucho y Pilar", "Esteban y Valentina",
         "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda", "Ivan Torres", "James y Elizabeth",
-        "Santiago", "Mateo", "Justina", "Erianna", "Miriam, Armando y David"
+        "Santiago", "Mateo", "Justina", "Erianna", "Miriam, Armando y David",
+        "Ricardo y Mariana",
+        "Stellita",
+        "Andres, Daniela y Zoe",
+        "Satiago", "Familia Ochoa",
+        "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
+        "Jorge y Genesis"
     ];
 
     const masDeUnoInvitados = {
         2: ["Alba y Robert", "Josue y Eloina", "Miguel y Pilar", "Victor y Fidelia", "Mauro y Mariluz",
             "Cristian y Angie", "Hector y Judith", "Miguel y Gladiz", "Jhon y Yasmin", "Maye y Nahomi",
             "Guillermo y Magda", "Emiro y Esperanza", "Daniel y Patricia",
-            "Amparo y Eugenio", "Ivan y Mariela", "Tere y Alvaro", "Never y Leti", "Eduardo y Maria"
+            "Amparo y Eugenio", "Ivan y Mariela", "Tere y Alvaro", "Never y Leti", "Eduardo y Maria",
+            "Ricardo y Mariana"
         ],
         3: ["David, Yurany y Valeria", "Yimmy, Maribel y Juan Esteban", "Simon, Juliet y Jael",
-            "Jaime, Monica e Isabella", "Henry, Claudia y Esteban", "Miriam, Armando y David"
+            "Jaime, Monica e Isabella", "Henry, Claudia y Esteban", "Miriam, Armando y David", "Andres, Daniela y Zoe",
+            "Familia Ochoa"
         ],
         4: ["Familia Garboza", "Familia Piñeros"],
         zoom: [
             "Pedro y Clara", "Lucho y Pilar", "Esteban y Valentina",
             "Ynes y Marielys", "Deyanira", "Rosalba", "Marisol", "Marina", "Hilda", "Familia Amador", "Jorge y Nubia",
             "Franklin", "Maye", "Nahomi", "Jose y Yulieth", "Diannys", "Lien y Euledis", "James y Elizabeth",
-            "Santiago", "Mateo", "Familia Casadessus"
+            "Santiago", "Mateo", "Familia Casadessus",
+            "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
+            "Jorge y Genesis"
         ]
     }
     const sourcesAudio = [
         "audio/music1.mp3",
+        "audio/music1.mp3",
         "audio/music2.mp3",
-        "audio/music3.mp3"
+        "audio/music3.mp3",
+        "audio/music4.mp3",
+        "audio/music4.mp3",
+        "audio/music4.mp3",
     ]
 // calle 42 sur #27 51
     const confirmar = document.getElementById("confirmar");
     const noZoom = document.getElementsByClassName("noZoom");
     const onlyZoom = document.getElementsByClassName("onlyZoom");
+    const overflow = document.getElementById("overflow");
     let confirmado = false;
 
     /**
@@ -142,13 +157,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (confirmado) {
             return;
         }
+        overflow.classList.add("active");
         confirmado = true;
         fetch("https://torresdev-backend.onrender.com/invs/confirm", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nombre: nombre })
-        })
-            .then(() => {
+        })  
+            .catch((e)=> {
+                console.log(e); 
+            })
+            .finally(() => {
+                overflow.classList.remove("active")
                 const wame = document.getElementById("wame");
                 wame.click();
             })
