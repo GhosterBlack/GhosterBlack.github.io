@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Andres, Daniela y Zoe",
         "Satiago", "Familia Ochoa",
         "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
-        "Jorge y Genesis"
+        "Jorge y Genesis", "Nubia", "Sara González"
     ];
 
     const masDeUnoInvitados = {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Franklin", "Maye", "Nahomi", "Jose y Yulieth", "Diannys", "Lien y Euledis", "James y Elizabeth",
             "Santiago", "Mateo", "Familia Casadessus",
             "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
-            "Jorge y Genesis", "Manuel", "Papo y Karen", 
+            "Jorge y Genesis", "Manuel", "Papo y Karen", "Nubia", "Sara González"
         ]
     }
     const sourcesAudio = [
