@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             , "Luz Dary y Guillermo",
             "Familia Caguana", "Familia Diaz Moncada", "Familia Diaz", "Claudia Villamil",
             "Zehira Duque", "Nancy Amariles", "Rafael", "Yanetsi", "Tio Carlos", "Milu", "Familia Muños",
-            "Lucho y Angela", "Anita 💖", "Catalina", "Ruby"
+            "Lucho y Angela", "Anita 💖", "Catalina", "Ruby", "Eliecer y Luzmarina"
         ]
     }
     const sourcesAudio = [
