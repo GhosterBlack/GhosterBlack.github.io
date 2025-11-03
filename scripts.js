@@ -4,13 +4,10 @@ window.addEventListener("load", () => {
     const closeModal = document.getElementById("closeModal");
     const openOptions = document.getElementById("openOptions");
     const options = document.getElementById("options");
-    const menuUsuario = document.getElementById("menuUsuario");
-    const closeMenu = document.getElementById("closeMenu");
+   
     verifyUser();
 
-    closeMenu.addEventListener("click", () => {
-        menuUsuario.classList.remove("active")
-    })
+   
 
     openOptions.onclick = () => {
         options.classList.toggle("active");
