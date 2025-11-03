@@ -18,9 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ricardo y Mariana",
         "Stellita",
         "Andres, Daniela y Zoe",
-        "Satiago", "Familia Ochoa",
+        "Santiago Daza", "Familia Ochoa",
         "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
-        "Jorge y Genesis", "Nubia", "Tati"
+        "Jorge y Genesis", "Nubia y Jorge", "Tati", "Diego y Vicky", "Luz Dary y Guillermo",
+        "Familia Caguana", "Familia Diaz Moncada", "Familia Diaz", "Claudia Villamil",
+        "Zehira Duque", "Nancy Amariles", "Rafael", "Yanetsi", "Tio Carlos", "Milu", "Familia Muños",
+        "Lucho y Angela", "Anita 💖", "Catalina", "Ruby"
     ];
 
     const masDeUnoInvitados = {
@@ -41,7 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "Franklin", "Maye", "Nahomi", "Jose y Yulieth", "Diannys", "Lien y Euledis", "James y Elizabeth",
             "Santiago", "Mateo", "Familia Casadessus",
             "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
-            "Jorge y Genesis", "Manuel", "Papo y Karen", "Nubia", "Tati"
+            "Jorge y Genesis", "Manuel", "Papo y Karen", "Nubia y Jorge", "Tati", "Diego y Vicky",
+            , "Luz Dary y Guillermo",
+            "Familia Caguana", "Familia Diaz Moncada", "Familia Diaz", "Claudia Villamil",
+            "Zehira Duque", "Nancy Amariles", "Rafael", "Yanetsi", "Tio Carlos", "Milu", "Familia Muños",
+            "Lucho y Angela", "Anita 💖", "Catalina", "Ruby"
         ]
     }
     const sourcesAudio = [
@@ -53,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "audio/music4.mp3",
         "audio/music4.mp3",
     ]
-// calle 42 sur #27 51
+    // calle 42 sur #27 51
     const confirmar = document.getElementById("confirmar");
     const noZoom = document.getElementsByClassName("noZoom");
     const onlyZoom = document.getElementsByClassName("onlyZoom");
@@ -163,9 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nombre: nombre })
-        })  
-            .catch((e)=> {
-                console.log(e); 
+        })
+            .catch((e) => {
+                console.log(e);
             })
             .finally(() => {
                 overflow.classList.remove("active")
