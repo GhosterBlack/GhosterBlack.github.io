@@ -14,7 +14,7 @@ function verifyUser() {
         .then(async (response) => {
             if (response.ok) {
                 userSection.innerHTML = "";
-                const user = await response.json();
+                const { user } = await response.json();
                 userSection.innerHTML = "<div class='boton'>" +
                     user.email.substring(0, user.email.indexOf("@")) +
                     "</div>";
