@@ -1,81 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galería del Evento</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f9f9f9;
-      text-align: center;
-      padding: 2rem;
-    }
-    h1 {
-      color: #333;
-    }
-    input[type="file"] {
-      margin: 1rem 0;
-    }
-    button {
-      padding: 0.5rem 1rem;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    #galeria {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-    #galeria img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería del Evento</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f9f9f9;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="file"] {
+            margin: 1rem 0;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #galeria {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        #galeria img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
+
 <body>
-  <h1>📸 Comparte tu foto del evento</h1>
-  <input type="file" id="foto" accept="image/*" />
-  <br />
-  <button onclick="subirFoto()">Subir foto</button>
+    <h1>📸 Comparte tu foto del evento</h1>
+    <input type="file" id="foto" accept="image/*" />
+    <br />
+    <button onclick="subirFoto()">Subir foto</button>
 
-  <div id="galeria"></div>
+    <div id="galeria"></div>
 
-  <script>
-    const scriptURL = "https://script.google.com/macros/s/1AMKYT7OAy7Ps1voPtXm5KpvIhuOTNyCMCvZGP_7RTfcYu9znVSBBFJ8J/exec"; // Reemplaza TU_ID con el ID real
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbz4BWqEojPZqaTBoF0Twe1ZNH9JR-018v2KjpZnRMfbd9TirgFsQc-kBC7hsTHJj_OSMQ/exec"; // Reemplaza TU_ID con el ID real
 
-    async function subirFoto() {
-      const fileInput = document.getElementById("foto");
-      const file = fileInput.files[0];
-      if (!file) return alert("Selecciona una foto primero");
+        function archivoABase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result); // incluye el prefix data:image/jpeg;base64,...
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
 
-      const formData = new FormData();
-      formData.append("file", file);
+        async function subirFoto() {
+            const file = document.getElementById("foto").files[0];
+            if (!file) return alert("Selecciona una foto");
 
-      await fetch(scriptURL, {
-        method: "POST",
-        body: formData
-      });
+            const base64 = await archivoABase64(file);
 
-      alert("Foto subida con éxito");
-      fileInput.value = "";
-      cargarFotos();
-    }
+            const res = await fetch(scriptURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ base64 })
+            });
 
-    async function cargarFotos() {
-      const res = await fetch(scriptURL);
-      const fotos = await res.json();
+            const text = await res.text();
+            alert(text);
+        }
 
-      const galeria = document.getElementById("galeria");
-      galeria.innerHTML = fotos.map(f => `<img src="${f.url}" alt="${f.name}" />`).join('');
-    }
 
-    window.onload = cargarFotos;
-  </script>
+
+        async function cargarFotos() {
+            const res = await fetch(scriptURL);
+            const fotos = await res.json();
+
+            const galeria = document.getElementById("galeria");
+            galeria.innerHTML = fotos.map(f => `<img src="${f.url}" alt="${f.name}" />`).join('');
+        }
+
+        window.onload = cargarFotos;
+    </script>
 </body>
+
 </html>
