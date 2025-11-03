@@ -54,8 +54,7 @@
     <div id="galeria"></div>
 
     <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbz4BWqEojPZqaTBoF0Twe1ZNH9JR-018v2KjpZnRMfbd9TirgFsQc-kBC7hsTHJj_OSMQ/exec"; // Reemplaza TU_ID con el ID real
-
+        const scriptURL = "https://torresdev-backend.onrender.com/invs/"
         function archivoABase64(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -71,7 +70,7 @@
 
             const base64 = await archivoABase64(file);
 
-            const res = await fetch(scriptURL, {
+            const res = await fetch(scriptURL+"postPhoto", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ base64 })
@@ -84,7 +83,7 @@
 
 
         async function cargarFotos() {
-            const res = await fetch(scriptURL);
+            const res = await fetch(scriptURL+"getPhoto");
             const fotos = await res.json();
 
             const galeria = document.getElementById("galeria");
