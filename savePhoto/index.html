@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería del Evento</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #333;
+    }
+    input[type="file"] {
+      margin: 1rem 0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #galeria {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    #galeria img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>📸 Comparte tu foto del evento</h1>
+  <input type="file" id="foto" accept="image/*" />
+  <br />
+  <button onclick="subirFoto()">Subir foto</button>
+
+  <div id="galeria"></div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/1AMKYT7OAy7Ps1voPtXm5KpvIhuOTNyCMCvZGP_7RTfcYu9znVSBBFJ8J/exec"; // Reemplaza TU_ID con el ID real
+
+    async function subirFoto() {
+      const fileInput = document.getElementById("foto");
+      const file = fileInput.files[0];
+      if (!file) return alert("Selecciona una foto primero");
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      await fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      });
+
+      alert("Foto subida con éxito");
+      fileInput.value = "";
+      cargarFotos();
+    }
+
+    async function cargarFotos() {
+      const res = await fetch(scriptURL);
+      const fotos = await res.json();
+
+      const galeria = document.getElementById("galeria");
+      galeria.innerHTML = fotos.map(f => `<img src="${f.url}" alt="${f.name}" />`).join('');
+    }
+
+    window.onload = cargarFotos;
+  </script>
+</body>
+</html>
