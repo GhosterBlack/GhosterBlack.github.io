@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Jorge y Genesis", "Nubia y Jorge", "Tati", "Diego y Vicky", "Luz Dary y Guillermo",
         "Familia Caguana", "Familia Diaz Moncada", "Familia Diaz", "Claudia Villamil",
         "Zehira Duque", "Nancy Amariles", "Rafael", "Yanetsi", "Tio Carlos", "Milu", "Familia Muños",
-        "Lucho y Angela", "Anita 💖", "Catalina", "Ruby", "Eliecer y Luzmarina", "Familia Rojas"
+        "Lucho y Angela", "Anita 💖", "Catalina", "Ruby", "Eliecer y Luzmarina", "Familia Rojas", "Alex y Lorena"
     ];
 
     const masDeUnoInvitados = {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Cristian y Angie", "Hector y Judith", "Miguel y Gladiz", "Jhon y Yasmin", "Maye y Nahomi",
             "Guillermo y Magda", "Emiro y Esperanza", "Daniel y Patricia",
             "Amparo y Eugenio", "Ivan y Mariela", "Tere y Alvaro", "Never y Leti", "Eduardo y Maria",
-            "Ricardo y Mariana", "Eliecer y Luzmarina", "Familia Rojas"
+            "Ricardo y Mariana", "Eliecer y Luzmarina", "Familia Rojas", "Alex y Lorena"
         ],
         3: ["David, Yurany y Valeria", "Yimmy, Maribel y Juan Esteban", "Simon, Juliet y Jael",
             "Jaime, Monica e Isabella", "Henry, Claudia y Esteban", "Miriam, Armando y David", "Andres, Daniela y Zoe",
