@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Andres, Daniela y Zoe",
         "Santiago Daza", "Familia Ochoa",
         "Familia Castro", "Luisana", "Andrea", "Familia Miranda", "Erisbel Miranda",
-        "Jorge y Genesis", "Nubia y Jorge", "Tati", "Diego y Vicky", "Luz Dary y Guillermo",
+        "Jorge y Genesis", "Jorge y Nubia", "Tati", "Diego y Vicky", "Luz Dary y Guillermo",
         "Familia Caguana", "Familia Diaz Moncada", "Familia Diaz", "Claudia Villamil",
         "Zehira Duque", "Nancy Amariles", "Rafael", "Yanetsi", "Tio Carlos", "Milu", "Familia Muños",
         "Lucho y Angela", "Anita 💖", "Catalina", "Ruby", "Eliecer y Luzmarina", "Familia Rojas", "Alex y Lorena",
